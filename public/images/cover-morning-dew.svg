@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="md-bg" cx="50%" cy="65%" r="75%">
+      <stop offset="0%" stop-color="#3a2200"/>
+      <stop offset="40%" stop-color="#1e1000"/>
+      <stop offset="100%" stop-color="#0c0600"/>
+    </radialGradient>
+    <radialGradient id="md-sunGlow" cx="50%" cy="75%" r="55%">
+      <stop offset="0%" stop-color="#ffaa33" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#cc7700" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3a2200" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="md-warmCore" cx="50%" cy="85%" r="35%">
+      <stop offset="0%" stop-color="#ffcc44" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff8800" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="md-dewdrop" cx="40%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#ffdd88" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffaa44" stop-opacity="0.1"/>
+    </radialGradient>
+    <linearGradient id="md-ray" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ffbb44" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffdd88" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="md-blur1">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="md-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="md-blur3">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="md-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#md-bg)"/>
+
+  <!-- Warm nebula glows -->
+  <ellipse cx="400" cy="420" rx="300" ry="200" fill="#aa5500" opacity="0.06" filter="url(#md-blur1)"/>
+  <ellipse cx="300" cy="350" rx="200" ry="180" fill="#cc7700" opacity="0.04" filter="url(#md-blur1)"/>
+  <ellipse cx="550" cy="380" rx="180" ry="160" fill="#dd8800" opacity="0.05" filter="url(#md-blur1)"/>
+
+  <!-- Stars (dimmer, dawn sky) -->
+  <circle cx="100" cy="60" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="220" cy="35" r="0.8" fill="#ffeedd" opacity="0.4"/>
+  <circle cx="350" cy="55" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="500" cy="40" r="0.9" fill="#ffeedd" opacity="0.5"/>
+  <circle cx="640" cy="70" r="1.2" fill="#ffffff" opacity="0.4"/>
+  <circle cx="710" cy="35" r="0.7" fill="#ffeedd" opacity="0.3"/>
+  <circle cx="70" cy="150" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="730" cy="160" r="0.8" fill="#ffffff" opacity="0.3"/>
+  <circle cx="150" cy="120" r="1.4" fill="#ffffff" opacity="0.6"/>
+  <circle cx="600" cy="100" r="0.9" fill="#ffeedd" opacity="0.5"/>
+  <circle cx="450" cy="90" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="280" cy="110" r="0.7" fill="#ffffff" opacity="0.4"/>
+  <circle cx="550" cy="130" r="1" fill="#ffeedd" opacity="0.4"/>
+  <circle cx="180" cy="200" r="0.8" fill="#ffffff" opacity="0.3"/>
+  <circle cx="680" cy="200" r="1.2" fill="#ffffff" opacity="0.35"/>
+  <circle cx="400" cy="130" r="0.9" fill="#ffeedd" opacity="0.4"/>
+
+  <!-- Sun glow -->
+  <ellipse cx="400" cy="440" rx="250" ry="200" fill="url(#md-sunGlow)" filter="url(#md-blur2)"/>
+  <ellipse cx="400" cy="460" rx="180" ry="120" fill="url(#md-warmCore)" filter="url(#md-blur2)"/>
+
+  <!-- Sunrise arc -->
+  <path d="M150,440 Q250,320 400,290 Q550,320 650,440" stroke="#ffaa33" stroke-width="2" fill="none" opacity="0.4" filter="url(#md-blur3)"/>
+  <path d="M180,440 Q280,340 400,315 Q520,340 620,440" stroke="#ffcc55" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M210,440 Q300,355 400,335 Q500,355 590,440" stroke="#ffdd77" stroke-width="1" fill="none" opacity="0.25"/>
+
+  <!-- Ascending light rays -->
+  <polygon points="400,290 390,120 410,120" fill="url(#md-ray)" opacity="0.35"/>
+  <polygon points="350,310 325,140 355,150" fill="url(#md-ray)" opacity="0.2"/>
+  <polygon points="450,310 445,150 475,140" fill="url(#md-ray)" opacity="0.2"/>
+  <polygon points="300,340 268,170 298,180" fill="url(#md-ray)" opacity="0.15"/>
+  <polygon points="500,340 502,180 532,170" fill="url(#md-ray)" opacity="0.15"/>
+  <polygon points="260,370 220,210 250,215" fill="url(#md-ray)" opacity="0.1"/>
+  <polygon points="540,370 550,215 580,210" fill="url(#md-ray)" opacity="0.1"/>
+
+  <!-- Warm golden glow core -->
+  <ellipse cx="400" cy="420" rx="60" ry="20" fill="#ffcc44" opacity="0.15" filter="url(#md-blur2)"/>
+
+  <!-- Dewdrop circles -->
+  <circle cx="300" cy="260" r="12" fill="none" stroke="#ffcc66" stroke-width="0.6" opacity="0.25"/>
+  <circle cx="300" cy="260" r="4" fill="url(#md-dewdrop)" opacity="0.4"/>
+
+  <circle cx="500" cy="250" r="10" fill="none" stroke="#ffcc66" stroke-width="0.6" opacity="0.22"/>
+  <circle cx="500" cy="250" r="3.5" fill="url(#md-dewdrop)" opacity="0.35"/>
+
+  <circle cx="350" cy="350" r="14" fill="none" stroke="#ffbb55" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="350" cy="350" r="5" fill="url(#md-dewdrop)" opacity="0.35"/>
+
+  <circle cx="460" cy="340" r="11" fill="none" stroke="#ffbb55" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="460" cy="340" r="3.8" fill="url(#md-dewdrop)" opacity="0.3"/>
+
+  <circle cx="240" cy="360" r="8" fill="none" stroke="#ffcc66" stroke-width="0.4" opacity="0.18"/>
+  <circle cx="240" cy="360" r="2.8" fill="url(#md-dewdrop)" opacity="0.28"/>
+
+  <circle cx="560" cy="350" r="9" fill="none" stroke="#ffcc66" stroke-width="0.4" opacity="0.18"/>
+  <circle cx="560" cy="350" r="3" fill="url(#md-dewdrop)" opacity="0.28"/>
+
+  <circle cx="400" cy="200" r="7" fill="none" stroke="#ffdd77" stroke-width="0.4" opacity="0.2"/>
+  <circle cx="400" cy="200" r="2.5" fill="url(#md-dewdrop)" opacity="0.3"/>
+
+  <!-- Horizon line glow -->
+  <line x1="100" y1="440" x2="700" y2="440" stroke="#ffaa33" stroke-width="1" opacity="0.15"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="3" filter="url(#md-glow)">MORNING DEW</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ddaa44" letter-spacing="6">AWAKENING RITUAL</text>
+
+  <!-- Decorative line -->
+  <line x1="305" y1="668" x2="495" y2="668" stroke="#aa7733" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#887744" letter-spacing="4">HEMISYNC.ORG</text>
+</svg>

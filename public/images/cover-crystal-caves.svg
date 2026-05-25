@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="cc-bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0a2028"/>
+      <stop offset="45%" stop-color="#061418"/>
+      <stop offset="100%" stop-color="#020a0c"/>
+    </radialGradient>
+    <radialGradient id="cc-nebula1" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#00bcd4" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#00838f" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cc-nebula2" cx="35%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#009688" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#00695c" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cc-nebula3" cx="65%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#4dd0e1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cc-glow-center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#80deea" stop-opacity="0.6"/>
+      <stop offset="30%" stop-color="#26c6da" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#00838f" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cc-crystal1" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#80deea" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#26c6da" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00838f" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="cc-crystal2" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#4dd0e1" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#00acc1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#006064" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="cc-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="cc-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="cc-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="cc-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#cc-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="400" cy="350" rx="300" ry="220" fill="url(#cc-nebula1)" filter="url(#cc-blur1)"/>
+  <ellipse cx="300" cy="400" rx="250" ry="200" fill="url(#cc-nebula2)" filter="url(#cc-blur1)"/>
+  <ellipse cx="500" cy="320" rx="200" ry="160" fill="url(#cc-nebula3)" filter="url(#cc-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#e0f7fa" opacity="0.6"/>
+  <circle cx="220" cy="45" r="0.8" fill="#b2ebf2" opacity="0.5"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.65"/>
+  <circle cx="525" cy="55" r="1" fill="#e0f7fa" opacity="0.55"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.5"/>
+  <circle cx="715" cy="35" r="0.9" fill="#b2ebf2" opacity="0.4"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="740" cy="240" r="1" fill="#e0f7fa" opacity="0.45"/>
+  <circle cx="50" cy="370" r="0.9" fill="#b2ebf2" opacity="0.4"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="670" cy="150" r="0.7" fill="#e0f7fa" opacity="0.5"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="630" cy="460" r="1.2" fill="#b2ebf2" opacity="0.45"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.6"/>
+  <circle cx="315" cy="490" r="1.1" fill="#e0f7fa" opacity="0.35"/>
+  <circle cx="560" cy="740" r="0.7" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Stalactite crystal formations from top -->
+  <polygon points="280,80 285,200 275,200" fill="url(#cc-crystal1)" opacity="0.25"/>
+  <polygon points="340,50 347,190 333,190" fill="url(#cc-crystal1)" opacity="0.3"/>
+  <polygon points="400,30 410,220 390,220" fill="url(#cc-crystal1)" opacity="0.35"/>
+  <polygon points="460,60 466,180 454,180" fill="url(#cc-crystal1)" opacity="0.28"/>
+  <polygon points="520,90 525,195 515,195" fill="url(#cc-crystal1)" opacity="0.22"/>
+
+  <!-- Stalagmite crystal formations from bottom pointing up toward center -->
+  <polygon points="260,540 268,380 252,380" fill="url(#cc-crystal2)" opacity="0.2"/>
+  <polygon points="330,540 340,350 320,350" fill="url(#cc-crystal2)" opacity="0.25"/>
+  <polygon points="400,540 412,320 388,320" fill="url(#cc-crystal2)" opacity="0.3"/>
+  <polygon points="470,540 480,360 460,360" fill="url(#cc-crystal2)" opacity="0.25"/>
+  <polygon points="540,540 546,390 534,390" fill="url(#cc-crystal2)" opacity="0.2"/>
+
+  <!-- Side crystal formations pointing inward -->
+  <polygon points="100,250 240,270 240,260" fill="url(#cc-crystal1)" opacity="0.18" transform="rotate(-10,170,260)"/>
+  <polygon points="100,350 230,340 230,330" fill="url(#cc-crystal1)" opacity="0.15"/>
+  <polygon points="700,260 560,275 560,265" fill="url(#cc-crystal1)" opacity="0.18" transform="rotate(10,630,267)"/>
+  <polygon points="700,340 570,335 570,325" fill="url(#cc-crystal1)" opacity="0.15"/>
+
+  <!-- Underground glow at center -->
+  <circle cx="400" cy="340" r="100" fill="url(#cc-glow-center)" filter="url(#cc-blur2)" opacity="0.5"/>
+  <circle cx="400" cy="340" r="50" fill="url(#cc-glow-center)" filter="url(#cc-blur3)" opacity="0.5"/>
+  <circle cx="400" cy="340" r="15" fill="#80deea" opacity="0.4" filter="url(#cc-glow)"/>
+  <circle cx="400" cy="340" r="5" fill="#e0f7fa" opacity="0.7"/>
+
+  <!-- Water droplet ripple circles -->
+  <circle cx="400" cy="480" r="20" fill="none" stroke="#4dd0e1" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="400" cy="480" r="35" fill="none" stroke="#26c6da" stroke-width="0.4" opacity="0.15"/>
+  <circle cx="400" cy="480" r="50" fill="none" stroke="#00bcd4" stroke-width="0.3" opacity="0.1"/>
+  <circle cx="400" cy="480" r="65" fill="none" stroke="#00acc1" stroke-width="0.25" opacity="0.08"/>
+
+  <!-- Crystal sparkle particles -->
+  <circle cx="300" cy="250" r="1.5" fill="#80deea" opacity="0.5" filter="url(#cc-blur3)"/>
+  <circle cx="500" cy="280" r="1.2" fill="#4dd0e1" opacity="0.4" filter="url(#cc-blur3)"/>
+  <circle cx="350" cy="380" r="1.8" fill="#80deea" opacity="0.35" filter="url(#cc-blur3)"/>
+  <circle cx="450" cy="300" r="1" fill="#e0f7fa" opacity="0.45" filter="url(#cc-blur3)"/>
+  <circle cx="280" cy="420" r="1.3" fill="#4dd0e1" opacity="0.3" filter="url(#cc-blur3)"/>
+  <circle cx="520" cy="370" r="1.4" fill="#80deea" opacity="0.35" filter="url(#cc-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#cc-glow)">CRYSTAL CAVES</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#4dd0e1" letter-spacing="6" opacity="0.65">INNER EXPLORATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#00838f" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#4dd0e1" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#00838f" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

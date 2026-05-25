@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="as-bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#0a2030"/>
+      <stop offset="45%" stop-color="#051520"/>
+      <stop offset="100%" stop-color="#020a10"/>
+    </radialGradient>
+    <radialGradient id="as-nebula1" cx="40%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#0d7377" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#065a5e" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="as-nebula2" cx="60%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#00bcd4" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#00838f" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="as-nebula3" cx="50%" cy="30%" r="30%">
+      <stop offset="0%" stop-color="#26c6da" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="as-aurora1" x1="0%" y1="0%" x2="100%" y2="30%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00bcd4" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#4dd0e1" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#80deea" stop-opacity="0.25"/>
+      <stop offset="80%" stop-color="#00bcd4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="as-aurora2" x1="100%" y1="0%" x2="0%" y2="20%">
+      <stop offset="0%" stop-color="#009688" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#26a69a" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#4db6ac" stop-opacity="0.3"/>
+      <stop offset="75%" stop-color="#26a69a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#009688" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="as-aurora3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00acc1" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00bcd4" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#b2ebf2" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#00bcd4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00acc1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="as-band1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#26c6da" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00838f" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="as-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="as-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="as-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="as-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#as-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="320" cy="300" rx="260" ry="200" fill="url(#as-nebula1)" filter="url(#as-blur1)"/>
+  <ellipse cx="500" cy="380" rx="220" ry="180" fill="url(#as-nebula2)" filter="url(#as-blur1)"/>
+  <ellipse cx="400" cy="280" rx="180" ry="130" fill="url(#as-nebula3)" filter="url(#as-blur1)"/>
+
+  <!-- Stars field -->
+  <circle cx="90" cy="55" r="1.3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="230" cy="40" r="0.8" fill="#b2ebf2" opacity="0.6"/>
+  <circle cx="365" cy="75" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="540" cy="50" r="1" fill="#e0f7fa" opacity="0.65"/>
+  <circle cx="660" cy="90" r="1.2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="710" cy="40" r="0.9" fill="#b2ebf2" opacity="0.5"/>
+  <circle cx="65" cy="200" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="735" cy="220" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="45" cy="380" r="0.9" fill="#e0f7fa" opacity="0.5"/>
+  <circle cx="755" cy="350" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="130" cy="140" r="1.4" fill="#ffffff" opacity="0.75"/>
+  <circle cx="670" cy="155" r="0.7" fill="#b2ebf2" opacity="0.6"/>
+  <circle cx="175" cy="460" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="625" cy="470" r="1.2" fill="#e0f7fa" opacity="0.55"/>
+  <circle cx="480" cy="105" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="310" cy="500" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="200" cy="700" r="0.7" fill="#ffffff" opacity="0.5"/>
+  <circle cx="590" cy="720" r="0.9" fill="#b2ebf2" opacity="0.4"/>
+  <circle cx="450" cy="760" r="0.6" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Color bands (gentle horizontal aurora bands) -->
+  <rect x="0" y="180" width="800" height="80" fill="url(#as-band1)" filter="url(#as-blur1)"/>
+  <rect x="0" y="280" width="800" height="60" fill="url(#as-band1)" opacity="0.5" filter="url(#as-blur1)"/>
+
+  <!-- Aurora curtain 1 — large flowing wave -->
+  <path d="M-20 280 Q100 200, 200 260 Q300 320, 400 240 Q500 160, 600 220 Q700 280, 820 200" fill="none" stroke="url(#as-aurora1)" stroke-width="50" opacity="0.4" filter="url(#as-blur2)"/>
+
+  <!-- Aurora curtain 2 — second flowing wave -->
+  <path d="M-20 320 Q120 380, 250 300 Q380 220, 500 290 Q620 360, 750 270 Q820 230, 820 270" fill="none" stroke="url(#as-aurora2)" stroke-width="40" opacity="0.35" filter="url(#as-blur2)"/>
+
+  <!-- Aurora curtain 3 — higher shimmer -->
+  <path d="M-20 220 Q80 170, 180 210 Q280 250, 380 190 Q480 130, 580 180 Q680 230, 820 160" fill="none" stroke="url(#as-aurora3)" stroke-width="30" opacity="0.3" filter="url(#as-blur2)"/>
+
+  <!-- Vertical aurora shimmer streaks -->
+  <path d="M200 200 Q195 280, 210 360 Q215 400, 200 450" stroke="#4dd0e1" stroke-width="2" fill="none" opacity="0.12" filter="url(#as-blur3)"/>
+  <path d="M350 180 Q340 260, 355 340 Q360 390, 345 440" stroke="#80deea" stroke-width="1.5" fill="none" opacity="0.1" filter="url(#as-blur3)"/>
+  <path d="M500 190 Q510 270, 495 350 Q490 400, 505 450" stroke="#4dd0e1" stroke-width="2" fill="none" opacity="0.11" filter="url(#as-blur3)"/>
+  <path d="M620 210 Q615 290, 625 370 Q630 410, 615 460" stroke="#80deea" stroke-width="1.5" fill="none" opacity="0.09" filter="url(#as-blur3)"/>
+
+  <!-- Shimmering particles along aurora -->
+  <circle cx="180" cy="250" r="2" fill="#80deea" opacity="0.5" filter="url(#as-blur3)"/>
+  <circle cx="300" cy="280" r="1.5" fill="#4dd0e1" opacity="0.45" filter="url(#as-blur3)"/>
+  <circle cx="420" cy="230" r="1.8" fill="#b2ebf2" opacity="0.4" filter="url(#as-blur3)"/>
+  <circle cx="550" cy="260" r="1.3" fill="#4dd0e1" opacity="0.5" filter="url(#as-blur3)"/>
+  <circle cx="670" cy="220" r="1.6" fill="#80deea" opacity="0.35" filter="url(#as-blur3)"/>
+  <circle cx="250" cy="310" r="1.2" fill="#b2ebf2" opacity="0.3" filter="url(#as-blur3)"/>
+  <circle cx="480" cy="300" r="1.4" fill="#26c6da" opacity="0.35" filter="url(#as-blur3)"/>
+  <circle cx="600" cy="290" r="1" fill="#80deea" opacity="0.3" filter="url(#as-blur3)"/>
+
+  <!-- Reflection glow at bottom -->
+  <ellipse cx="400" cy="520" rx="300" ry="60" fill="#00bcd4" opacity="0.04" filter="url(#as-blur1)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#as-glow)">AURORA STREAM</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#4dd0e1" letter-spacing="6" opacity="0.65">NORTHERN LIGHT MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#00bcd4" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#4dd0e1" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#00838f" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

@@ -1,0 +1,66 @@
+export const plans = [
+  {
+    id: "free",
+    name: "Explorer",
+    price: 0,
+    interval: null,
+    description: "Preview tracks and purchase individually",
+    features: [
+      "Preview all audio sessions",
+      "Purchase individual tracks",
+      "Access to free daily meditation",
+      "Community newsletter",
+    ],
+    limitations: [
+      "No full-track downloads",
+      "No exclusive content",
+      "No offline access",
+    ],
+    cta: "Get Started Free",
+    popular: false,
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    priceMonthly: 9.99,
+    priceYearly: 99,
+    description: "Unlimited downloads and full library access",
+    features: [
+      "Unlimited MP3 downloads",
+      "Full library access (all tracks)",
+      "New releases on launch day",
+      "Offline listening",
+      "Priority support",
+      "Ad-free experience",
+    ],
+    limitations: [],
+    cta: "Start Premium",
+    popular: true,
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    priceMonthly: 19.99,
+    priceYearly: 199,
+    description: "Everything in Premium plus exclusive content",
+    features: [
+      "Everything in Premium",
+      "Exclusive Pro-only sessions",
+      "Early access to new releases",
+      "WAV lossless downloads",
+      "Custom playlist creation",
+      "1-on-1 session recommendations",
+      "Commercial usage license",
+    ],
+    limitations: [],
+    cta: "Go Pro",
+    popular: false,
+  },
+];
+
+export const memberStats = {
+  totalMembers: "12,400+",
+  activeListeners: "8,200+",
+  sessionsPlayed: "1.2M+",
+  avgRating: "4.9/5",
+};

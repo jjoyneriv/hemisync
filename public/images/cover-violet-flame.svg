@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="vf-bg" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#2a1040"/>
+      <stop offset="45%" stop-color="#180828"/>
+      <stop offset="100%" stop-color="#0a0412"/>
+    </radialGradient>
+    <radialGradient id="vf-flameGlow" cx="50%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#bb44ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7722aa" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#2a1040" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vf-innerGlow" cx="50%" cy="80%" r="30%">
+      <stop offset="0%" stop-color="#dd88ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7722aa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vf-flame1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#9933cc" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#bb55ee" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#dd88ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="vf-flame2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7722bb" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#9944dd" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#cc77ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="vf-flame3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#aa44dd" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ee99ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="vf-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="vf-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="vf-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="vf-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#vf-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="350" cy="350" rx="220" ry="250" fill="#6622aa" opacity="0.07" filter="url(#vf-blur1)"/>
+  <ellipse cx="480" cy="300" rx="180" ry="200" fill="#9944cc" opacity="0.05" filter="url(#vf-blur1)"/>
+  <ellipse cx="400" cy="450" rx="200" ry="120" fill="#7733bb" opacity="0.08" filter="url(#vf-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="110" cy="70" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="240" cy="50" r="0.8" fill="#ddaaff" opacity="0.6"/>
+  <circle cx="370" cy="80" r="1.4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="530" cy="55" r="1" fill="#eeccff" opacity="0.7"/>
+  <circle cx="650" cy="95" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="700" cy="45" r="0.9" fill="#ddaaff" opacity="0.5"/>
+  <circle cx="75" cy="210" r="1.1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="725" cy="230" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="50" cy="350" r="0.9" fill="#eeccff" opacity="0.5"/>
+  <circle cx="750" cy="370" r="1.1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="140" cy="150" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="660" cy="160" r="0.7" fill="#ddaaff" opacity="0.6"/>
+  <circle cx="180" cy="430" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="620" cy="440" r="1.2" fill="#eeccff" opacity="0.6"/>
+  <circle cx="470" cy="110" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="305" cy="480" r="1.1" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Cathedral/temple arches -->
+  <path d="M250,520 Q250,200 400,140 Q550,200 550,520" stroke="#8844bb" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <path d="M280,520 Q280,230 400,175 Q520,230 520,520" stroke="#9955cc" stroke-width="0.6" fill="none" opacity="0.18"/>
+  <path d="M310,520 Q310,260 400,210 Q490,260 490,520" stroke="#aa66dd" stroke-width="0.5" fill="none" opacity="0.15"/>
+
+  <!-- Flame glow base -->
+  <ellipse cx="400" cy="480" rx="120" ry="40" fill="url(#vf-flameGlow)" filter="url(#vf-blur2)"/>
+  <ellipse cx="400" cy="450" rx="80" ry="80" fill="url(#vf-innerGlow)" filter="url(#vf-blur2)"/>
+
+  <!-- Flame shapes rising -->
+  <!-- Central large flame -->
+  <path d="M400,520 Q360,420 370,350 Q380,280 400,200 Q420,280 430,350 Q440,420 400,520Z" fill="url(#vf-flame1)" filter="url(#vf-blur3)"/>
+  <!-- Left flame -->
+  <path d="M370,520 Q340,440 345,380 Q350,320 365,250 Q380,320 385,380 Q390,440 370,520Z" fill="url(#vf-flame2)" filter="url(#vf-blur3)"/>
+  <!-- Right flame -->
+  <path d="M430,520 Q410,440 415,380 Q420,320 435,260 Q450,330 455,380 Q460,440 430,520Z" fill="url(#vf-flame2)" filter="url(#vf-blur3)"/>
+  <!-- Far left wisp -->
+  <path d="M340,520 Q315,460 320,410 Q325,370 335,310 Q345,370 350,410 Q355,460 340,520Z" fill="url(#vf-flame3)" filter="url(#vf-blur3)"/>
+  <!-- Far right wisp -->
+  <path d="M460,520 Q445,460 450,410 Q455,370 465,320 Q475,375 480,410 Q485,460 460,520Z" fill="url(#vf-flame3)" filter="url(#vf-blur3)"/>
+
+  <!-- Inner bright core of flame -->
+  <path d="M400,500 Q388,440 392,400 Q396,360 400,300 Q404,360 408,400 Q412,440 400,500Z" fill="#cc77ff" opacity="0.2" filter="url(#vf-blur3)"/>
+
+  <!-- Violet radial glow behind flame -->
+  <ellipse cx="400" cy="350" rx="100" ry="150" fill="#9944dd" opacity="0.06" filter="url(#vf-blur1)"/>
+
+  <!-- Small floating ember particles -->
+  <circle cx="380" cy="280" r="1.5" fill="#cc88ff" opacity="0.5" filter="url(#vf-blur3)"/>
+  <circle cx="420" cy="250" r="1.2" fill="#dd99ff" opacity="0.4" filter="url(#vf-blur3)"/>
+  <circle cx="365" cy="320" r="1" fill="#bb77ee" opacity="0.4" filter="url(#vf-blur3)"/>
+  <circle cx="440" cy="300" r="1.3" fill="#cc88ff" opacity="0.35" filter="url(#vf-blur3)"/>
+  <circle cx="395" cy="230" r="1.1" fill="#dd99ff" opacity="0.3" filter="url(#vf-blur3)"/>
+  <circle cx="410" cy="210" r="0.9" fill="#eeaaff" opacity="0.25" filter="url(#vf-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="3" filter="url(#vf-glow)">VIOLET FLAME</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#bb77dd" letter-spacing="6">DEEP CONTEMPLATION</text>
+
+  <!-- Decorative line -->
+  <line x1="305" y1="668" x2="495" y2="668" stroke="#8844aa" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#776699" letter-spacing="4">HEMISYNC.ORG</text>
+</svg>

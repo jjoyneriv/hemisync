@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Background radial gradient: sky-blue center fading to deep indigo/black -->
+    <radialGradient id="ih-bg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#4a8ec9"/>
+      <stop offset="25%" stop-color="#2a5a8f"/>
+      <stop offset="50%" stop-color="#1a2d5e"/>
+      <stop offset="75%" stop-color="#0d1533"/>
+      <stop offset="100%" stop-color="#050a18"/>
+    </radialGradient>
+
+    <!-- Central core glow -->
+    <radialGradient id="ih-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="15%" stop-color="#c8e4ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#5ba0d9" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#2a5a8f" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#1a2d5e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Horizon glow gradient (horizontal) -->
+    <linearGradient id="ih-horizon-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a8ec9" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#6ab0e8" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#8ecaff" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#6ab0e8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4a8ec9" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Horizon line gradient (left-right fade) -->
+    <linearGradient id="ih-horizon-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8ecaff" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#8ecaff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#8ecaff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8ecaff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Vertical light rays gradient (upward) -->
+    <linearGradient id="ih-ray-up" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="30%" stop-color="#8ecaff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4a8ec9" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Vertical light rays gradient (downward) -->
+    <linearGradient id="ih-ray-down" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="30%" stop-color="#8ecaff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4a8ec9" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Aurora gradient upper -->
+    <linearGradient id="ih-aurora-upper" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a8ec9" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#6ab0e8" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#8ecaff" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#a8c8ff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#4a8ec9" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Aurora gradient lower -->
+    <linearGradient id="ih-aurora-lower" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a6ea0" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#5a90c0" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#7ab0e0" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#5a90c0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#3a6ea0" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Nebula glow gradients -->
+    <radialGradient id="ih-nebula1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5a9ad5" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#3a6ea0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#1a2d5e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ih-nebula2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7ab8e8" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#4a8ec9" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#2a5a8f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ih-nebula3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6a5aad" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#3a2a6e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring gradient for concentric circles -->
+    <radialGradient id="ih-ring-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="85%" stop-color="#8ecaff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#4a8ec9" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Decorative line gradient -->
+    <linearGradient id="ih-decoline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8ecaff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8ecaff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8ecaff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="ih-blur-heavy">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+    <filter id="ih-blur-medium">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="ih-blur-light">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="ih-blur-soft">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="ih-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ih-star-glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ih-core-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ih-text-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep space background -->
+  <rect width="800" height="800" fill="url(#ih-bg)"/>
+
+  <!-- Nebula glow ellipses -->
+  <ellipse cx="280" cy="300" rx="240" ry="160" fill="url(#ih-nebula1)" filter="url(#ih-blur-heavy)" transform="rotate(-12,280,300)"/>
+  <ellipse cx="550" cy="350" rx="200" ry="130" fill="url(#ih-nebula2)" filter="url(#ih-blur-heavy)" transform="rotate(18,550,350)"/>
+  <ellipse cx="400" cy="250" rx="180" ry="110" fill="url(#ih-nebula3)" filter="url(#ih-blur-heavy)" transform="rotate(-5,400,250)"/>
+  <ellipse cx="200" cy="450" rx="160" ry="100" fill="url(#ih-nebula2)" filter="url(#ih-blur-heavy)" transform="rotate(25,200,450)"/>
+  <ellipse cx="600" cy="480" rx="170" ry="120" fill="url(#ih-nebula1)" filter="url(#ih-blur-heavy)" transform="rotate(-20,600,480)"/>
+
+  <!-- Scattered stars -->
+  <circle cx="95" cy="68" r="1.6" fill="#ffffff" opacity="0.85" filter="url(#ih-star-glow)"/>
+  <circle cx="210" cy="42" r="1.1" fill="#c8e4ff" opacity="0.7"/>
+  <circle cx="345" cy="95" r="1.8" fill="#ffffff" opacity="0.9" filter="url(#ih-star-glow)"/>
+  <circle cx="480" cy="55" r="1.3" fill="#a8d4ff" opacity="0.75"/>
+  <circle cx="620" cy="80" r="1.5" fill="#ffffff" opacity="0.85" filter="url(#ih-star-glow)"/>
+  <circle cx="735" cy="45" r="1.0" fill="#c8e4ff" opacity="0.65"/>
+  <circle cx="70" cy="200" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="155" cy="310" r="1.4" fill="#a8d4ff" opacity="0.75"/>
+  <circle cx="720" cy="190" r="1.6" fill="#ffffff" opacity="0.8" filter="url(#ih-star-glow)"/>
+  <circle cx="680" cy="295" r="1.1" fill="#c8e4ff" opacity="0.7"/>
+  <circle cx="50" cy="450" r="1.3" fill="#ffffff" opacity="0.75"/>
+  <circle cx="130" cy="520" r="1.0" fill="#a8d4ff" opacity="0.6"/>
+  <circle cx="750" cy="430" r="1.5" fill="#ffffff" opacity="0.8" filter="url(#ih-star-glow)"/>
+  <circle cx="660" cy="540" r="1.2" fill="#c8e4ff" opacity="0.65"/>
+  <circle cx="90" cy="650" r="1.4" fill="#ffffff" opacity="0.7"/>
+  <circle cx="250" cy="720" r="1.1" fill="#a8d4ff" opacity="0.6"/>
+  <circle cx="550" cy="700" r="1.3" fill="#ffffff" opacity="0.7" filter="url(#ih-star-glow)"/>
+  <circle cx="700" cy="680" r="1.0" fill="#c8e4ff" opacity="0.55"/>
+  <circle cx="430" cy="150" r="1.7" fill="#ffffff" opacity="0.9" filter="url(#ih-star-glow)"/>
+  <circle cx="300" cy="180" r="1.0" fill="#a8d4ff" opacity="0.65"/>
+
+  <!-- Vertical light rays emanating from center point (upward) -->
+  <rect x="394" y="80" width="12" height="320" fill="url(#ih-ray-up)" filter="url(#ih-blur-light)" opacity="0.6"/>
+  <rect x="388" y="120" width="24" height="280" fill="url(#ih-ray-up)" filter="url(#ih-blur-medium)" opacity="0.3"/>
+  <rect x="396" y="150" width="8" height="250" fill="url(#ih-ray-up)" filter="url(#ih-blur-soft)" opacity="0.5"/>
+
+  <!-- Vertical light rays emanating from center point (downward) -->
+  <rect x="394" y="400" width="12" height="320" fill="url(#ih-ray-down)" filter="url(#ih-blur-light)" opacity="0.6"/>
+  <rect x="388" y="400" width="24" height="280" fill="url(#ih-ray-down)" filter="url(#ih-blur-medium)" opacity="0.3"/>
+  <rect x="396" y="400" width="8" height="250" fill="url(#ih-ray-down)" filter="url(#ih-blur-soft)" opacity="0.5"/>
+
+  <!-- Aurora-like curves above the horizon -->
+  <path d="M80,320 Q200,260 320,300 Q400,320 480,280 Q560,240 680,290 Q740,310 780,295" stroke="#6ab0e8" stroke-width="35" fill="none" opacity="0.07" filter="url(#ih-blur-medium)"/>
+  <path d="M50,340 Q180,285 300,310 Q400,330 500,295 Q600,260 750,305" stroke="#8ecaff" stroke-width="25" fill="none" opacity="0.09" filter="url(#ih-blur-medium)"/>
+  <path d="M100,355 Q250,310 350,335 Q400,345 460,320 Q550,290 720,330" stroke="#a8d4ff" stroke-width="15" fill="none" opacity="0.06" filter="url(#ih-blur-light)"/>
+
+  <!-- Aurora-like curves below the horizon -->
+  <path d="M80,480 Q200,540 320,500 Q400,480 480,520 Q560,555 680,510 Q740,490 780,505" stroke="#5a90c0" stroke-width="35" fill="none" opacity="0.06" filter="url(#ih-blur-medium)"/>
+  <path d="M50,460 Q180,515 300,490 Q400,470 500,505 Q600,540 750,495" stroke="#7ab0e0" stroke-width="25" fill="none" opacity="0.08" filter="url(#ih-blur-medium)"/>
+  <path d="M100,445 Q250,490 350,465 Q400,455 460,480 Q550,510 720,470" stroke="#a8c8ff" stroke-width="15" fill="none" opacity="0.05" filter="url(#ih-blur-light)"/>
+
+  <!-- Horizon glow band -->
+  <rect x="0" y="340" width="800" height="120" fill="url(#ih-horizon-glow)" filter="url(#ih-blur-light)"/>
+
+  <!-- Concentric expanding circles (awareness expansion rings) -->
+  <circle cx="400" cy="400" r="60" stroke="#8ecaff" stroke-width="1.5" fill="none" opacity="0.35" filter="url(#ih-glow)"/>
+  <circle cx="400" cy="400" r="105" stroke="#7ab8e8" stroke-width="1.2" fill="none" opacity="0.28"/>
+  <circle cx="400" cy="400" r="155" stroke="#6ab0e8" stroke-width="1.0" fill="none" opacity="0.22"/>
+  <circle cx="400" cy="400" r="210" stroke="#5a9ad5" stroke-width="0.9" fill="none" opacity="0.16"/>
+  <circle cx="400" cy="400" r="270" stroke="#4a8ec9" stroke-width="0.8" fill="none" opacity="0.11"/>
+  <circle cx="400" cy="400" r="340" stroke="#3a7ab5" stroke-width="0.7" fill="none" opacity="0.07"/>
+
+  <!-- Subtle ring fill glow -->
+  <circle cx="400" cy="400" r="65" fill="url(#ih-ring-glow)" filter="url(#ih-blur-soft)"/>
+
+  <!-- Horizon line -->
+  <line x1="0" y1="400" x2="800" y2="400" stroke="url(#ih-horizon-line)" stroke-width="1.5"/>
+  <!-- Softer wide horizon glow line -->
+  <line x1="50" y1="400" x2="750" y2="400" stroke="url(#ih-horizon-line)" stroke-width="6" opacity="0.3" filter="url(#ih-blur-soft)"/>
+
+  <!-- Central bright point of light -->
+  <!-- Outer blue glow -->
+  <circle cx="400" cy="400" r="30" fill="url(#ih-core)" filter="url(#ih-blur-light)" opacity="0.8"/>
+  <!-- Mid glow -->
+  <circle cx="400" cy="400" r="16" fill="url(#ih-core)" filter="url(#ih-blur-soft)" opacity="0.9"/>
+  <!-- White core -->
+  <circle cx="400" cy="400" r="5" fill="#ffffff" opacity="1" filter="url(#ih-core-glow)"/>
+  <!-- Bright center dot -->
+  <circle cx="400" cy="400" r="2.5" fill="#ffffff" opacity="1"/>
+
+  <!-- Title text -->
+  <text x="400" y="600" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="3" opacity="0.9" filter="url(#ih-text-glow)">INFINITE HORIZON</text>
+
+  <!-- Subtitle text -->
+  <text x="400" y="638" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#8ecaff" text-anchor="middle" letter-spacing="6" opacity="0.65">EXPANSIVE AWARENESS</text>
+
+  <!-- Decorative line -->
+  <line x1="310" y1="668" x2="490" y2="668" stroke="url(#ih-decoline)" stroke-width="1"/>
+
+  <!-- Brand text -->
+  <text x="400" y="708" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7ab0d8" text-anchor="middle" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

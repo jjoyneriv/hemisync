@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="ml-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a0a30"/>
+      <stop offset="45%" stop-color="#0c0520"/>
+      <stop offset="100%" stop-color="#04020e"/>
+    </radialGradient>
+    <radialGradient id="ml-nebula1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#7b1fa2" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#4a148c" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ml-nebula2" cx="40%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#311b92" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#1a237e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ml-nebula3" cx="55%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#9c27b0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ml-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e1bee7" stop-opacity="0.6"/>
+      <stop offset="25%" stop-color="#ce93d8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7b1fa2" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ml-waterGlow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#9c27b0" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#4a148c" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ml-petal" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ce93d8" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#9c27b0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6a1b9a" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="ml-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="ml-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="ml-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="ml-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#ml-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="400" cy="300" rx="300" ry="220" fill="url(#ml-nebula1)" filter="url(#ml-blur1)"/>
+  <ellipse cx="350" cy="380" rx="250" ry="200" fill="url(#ml-nebula2)" filter="url(#ml-blur1)"/>
+  <ellipse cx="450" cy="280" rx="200" ry="160" fill="url(#ml-nebula3)" filter="url(#ml-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="220" cy="45" r="0.8" fill="#e1bee7" opacity="0.6"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.75"/>
+  <circle cx="525" cy="55" r="1" fill="#d1c4e9" opacity="0.65"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="715" cy="35" r="0.9" fill="#e1bee7" opacity="0.5"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="740" cy="240" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="50" cy="370" r="0.9" fill="#d1c4e9" opacity="0.5"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="670" cy="150" r="0.7" fill="#e1bee7" opacity="0.6"/>
+  <circle cx="170" cy="300" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="630" cy="290" r="1.2" fill="#d1c4e9" opacity="0.55"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="315" cy="170" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="560" cy="130" r="0.7" fill="#e1bee7" opacity="0.4"/>
+
+  <!-- Moon -->
+  <circle cx="400" cy="150" r="50" fill="url(#ml-moonGlow)" filter="url(#ml-blur2)" opacity="0.6"/>
+  <circle cx="400" cy="150" r="30" fill="#e1bee7" opacity="0.1" filter="url(#ml-blur3)"/>
+  <circle cx="400" cy="150" r="18" fill="#f3e5f5" opacity="0.15"/>
+  <circle cx="410" cy="145" r="16" fill="#1a0a30" opacity="0.12"/>
+
+  <!-- Moon reflection line in water -->
+  <line x1="400" y1="430" x2="400" y2="540" stroke="#ce93d8" stroke-width="0.8" opacity="0.15"/>
+  <line x1="398" y1="440" x2="398" y2="530" stroke="#e1bee7" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Water surface line -->
+  <path d="M100 430 Q200 425, 300 430 Q350 433, 400 428 Q450 423, 500 430 Q600 438, 700 430"
+        fill="none" stroke="#7b1fa2" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Water reflection glow -->
+  <ellipse cx="400" cy="480" rx="200" ry="60" fill="url(#ml-waterGlow)" filter="url(#ml-blur1)"/>
+
+  <!-- Lotus flower petals — outer ring -->
+  <path d="M400 350 Q370 310, 340 340 Q330 360, 400 380Z" fill="none" stroke="#ce93d8" stroke-width="0.8" opacity="0.3"/>
+  <path d="M400 350 Q430 310, 460 340 Q470 360, 400 380Z" fill="none" stroke="#ce93d8" stroke-width="0.8" opacity="0.3"/>
+  <path d="M400 350 Q360 330, 330 300 Q340 280, 400 340Z" fill="none" stroke="#ba68c8" stroke-width="0.6" opacity="0.25"/>
+  <path d="M400 350 Q440 330, 470 300 Q460 280, 400 340Z" fill="none" stroke="#ba68c8" stroke-width="0.6" opacity="0.25"/>
+  <path d="M400 350 Q380 300, 400 270 Q420 300, 400 350Z" fill="none" stroke="#ab47bc" stroke-width="0.7" opacity="0.3"/>
+
+  <!-- Lotus inner petals -->
+  <path d="M400 370 Q385 350, 375 365 Q380 375, 400 380Z" fill="#ce93d8" opacity="0.15"/>
+  <path d="M400 370 Q415 350, 425 365 Q420 375, 400 380Z" fill="#ce93d8" opacity="0.15"/>
+  <path d="M400 365 Q395 345, 400 335 Q405 345, 400 365Z" fill="#e1bee7" opacity="0.12"/>
+
+  <!-- Lotus center glow -->
+  <circle cx="400" cy="360" r="15" fill="#ce93d8" opacity="0.15" filter="url(#ml-blur3)"/>
+  <circle cx="400" cy="360" r="5" fill="#e1bee7" opacity="0.3"/>
+  <circle cx="400" cy="360" r="2" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Deep stillness — subtle concentric circles below lotus -->
+  <circle cx="400" cy="430" r="30" fill="none" stroke="#7b1fa2" stroke-width="0.4" opacity="0.15"/>
+  <circle cx="400" cy="430" r="50" fill="none" stroke="#6a1b9a" stroke-width="0.3" opacity="0.1"/>
+  <circle cx="400" cy="430" r="70" fill="none" stroke="#4a148c" stroke-width="0.25" opacity="0.08"/>
+
+  <!-- Floating particles -->
+  <circle cx="300" cy="250" r="1.5" fill="#ce93d8" opacity="0.4" filter="url(#ml-blur3)"/>
+  <circle cx="500" cy="280" r="1.2" fill="#ba68c8" opacity="0.35" filter="url(#ml-blur3)"/>
+  <circle cx="350" cy="400" r="1.8" fill="#e1bee7" opacity="0.3" filter="url(#ml-blur3)"/>
+  <circle cx="450" cy="420" r="1" fill="#ce93d8" opacity="0.3" filter="url(#ml-blur3)"/>
+  <circle cx="280" cy="380" r="1.3" fill="#ba68c8" opacity="0.25" filter="url(#ml-blur3)"/>
+  <circle cx="520" cy="370" r="1.4" fill="#ce93d8" opacity="0.3" filter="url(#ml-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#ml-glow)">MIDNIGHT LOTUS</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ce93d8" letter-spacing="5" opacity="0.65">DEEP NIGHT MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#7b1fa2" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#ce93d8" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7b1fa2" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

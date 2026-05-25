@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="ir-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a1a20"/>
+      <stop offset="45%" stop-color="#0e0e12"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+    <radialGradient id="ir-nebula1" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#78909c" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#546e7a" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ir-nebula2" cx="45%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#90a4ae" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#607d8b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ir-nebula3" cx="55%" cy="38%" r="35%">
+      <stop offset="0%" stop-color="#b0bec5" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ir-coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cfd8dc" stop-opacity="0.6"/>
+      <stop offset="25%" stop-color="#90a4ae" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#607d8b" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ir-metalGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b0bec5" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#78909c" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#cfd8dc" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#78909c" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="ir-metalGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#90a4ae" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#607d8b" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#b0bec5" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#607d8b" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="ir-converge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#607d8b" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#90a4ae" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#cfd8dc" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#90a4ae" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#607d8b" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ir-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="ir-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="ir-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="ir-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="ir-brightglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#ir-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="400" cy="340" rx="280" ry="210" fill="url(#ir-nebula1)" filter="url(#ir-blur1)"/>
+  <ellipse cx="370" cy="370" rx="240" ry="190" fill="url(#ir-nebula2)" filter="url(#ir-blur1)"/>
+  <ellipse cx="430" cy="310" rx="200" ry="160" fill="url(#ir-nebula3)" filter="url(#ir-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffffff" opacity="0.55"/>
+  <circle cx="220" cy="45" r="0.8" fill="#cfd8dc" opacity="0.45"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.6"/>
+  <circle cx="525" cy="55" r="1" fill="#b0bec5" opacity="0.5"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.45"/>
+  <circle cx="715" cy="35" r="0.9" fill="#cfd8dc" opacity="0.4"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="740" cy="240" r="1" fill="#b0bec5" opacity="0.4"/>
+  <circle cx="50" cy="370" r="0.9" fill="#cfd8dc" opacity="0.4"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.65"/>
+  <circle cx="670" cy="150" r="0.7" fill="#b0bec5" opacity="0.45"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="630" cy="460" r="1.2" fill="#cfd8dc" opacity="0.4"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.55"/>
+  <circle cx="315" cy="490" r="1.1" fill="#b0bec5" opacity="0.3"/>
+  <circle cx="560" cy="740" r="0.7" fill="#ffffff" opacity="0.3"/>
+  <circle cx="250" cy="720" r="0.9" fill="#cfd8dc" opacity="0.35"/>
+
+  <!-- Sharp focused lines converging to center -->
+  <line x1="100" y1="100" x2="395" y2="335" stroke="#78909c" stroke-width="0.8" opacity="0.25"/>
+  <line x1="700" y1="100" x2="405" y2="335" stroke="#78909c" stroke-width="0.8" opacity="0.25"/>
+  <line x1="100" y1="540" x2="395" y2="345" stroke="#607d8b" stroke-width="0.6" opacity="0.2"/>
+  <line x1="700" y1="540" x2="405" y2="345" stroke="#607d8b" stroke-width="0.6" opacity="0.2"/>
+  <line x1="100" y1="340" x2="390" y2="340" stroke="#90a4ae" stroke-width="0.5" opacity="0.18"/>
+  <line x1="700" y1="340" x2="410" y2="340" stroke="#90a4ae" stroke-width="0.5" opacity="0.18"/>
+  <line x1="400" y1="80" x2="400" y2="330" stroke="#b0bec5" stroke-width="0.6" opacity="0.2"/>
+  <line x1="400" y1="560" x2="400" y2="350" stroke="#b0bec5" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- Angular geometric shapes — outer fortress structure -->
+  <polygon points="400,200 500,280 500,400 400,480 300,400 300,280"
+           fill="none" stroke="url(#ir-metalGrad1)" stroke-width="1" opacity="0.2"/>
+  <polygon points="400,230 480,295 480,385 400,450 320,385 320,295"
+           fill="none" stroke="url(#ir-metalGrad2)" stroke-width="0.8" opacity="0.18"/>
+  <polygon points="400,260 460,310 460,370 400,420 340,370 340,310"
+           fill="none" stroke="#90a4ae" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- Inner angular diamond -->
+  <polygon points="400,290 440,340 400,390 360,340"
+           fill="none" stroke="#b0bec5" stroke-width="0.8" opacity="0.2"/>
+  <polygon points="400,305 425,340 400,375 375,340"
+           fill="none" stroke="#cfd8dc" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Fortress-like battlements at top -->
+  <path d="M340,280 L340,265 L355,265 L355,275 L370,275 L370,260 L385,260 L385,272 L400,272 L400,258 L415,258 L415,272 L430,272 L430,260 L445,260 L445,275 L460,275 L460,265 L460,280"
+        fill="none" stroke="#78909c" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Metallic sheen accent lines -->
+  <path d="M300,280 L250,240" stroke="#b0bec5" stroke-width="0.4" opacity="0.12"/>
+  <path d="M500,280 L550,240" stroke="#b0bec5" stroke-width="0.4" opacity="0.12"/>
+  <path d="M300,400 L250,440" stroke="#90a4ae" stroke-width="0.4" opacity="0.1"/>
+  <path d="M500,400 L550,440" stroke="#90a4ae" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Center convergence point glow -->
+  <circle cx="400" cy="340" r="60" fill="url(#ir-coreGlow)" filter="url(#ir-blur2)" opacity="0.4"/>
+  <circle cx="400" cy="340" r="25" fill="url(#ir-coreGlow)" filter="url(#ir-blur3)" opacity="0.5"/>
+  <circle cx="400" cy="340" r="10" fill="#cfd8dc" opacity="0.3" filter="url(#ir-brightglow)"/>
+  <circle cx="400" cy="340" r="3" fill="#eceff1" opacity="0.7"/>
+
+  <!-- Steel particles -->
+  <circle cx="310" cy="290" r="1.5" fill="#b0bec5" opacity="0.35" filter="url(#ir-blur3)"/>
+  <circle cx="490" cy="300" r="1.2" fill="#90a4ae" opacity="0.3" filter="url(#ir-blur3)"/>
+  <circle cx="340" cy="420" r="1.8" fill="#cfd8dc" opacity="0.25" filter="url(#ir-blur3)"/>
+  <circle cx="460" cy="410" r="1" fill="#b0bec5" opacity="0.25" filter="url(#ir-blur3)"/>
+  <circle cx="280" cy="360" r="1.3" fill="#90a4ae" opacity="0.2" filter="url(#ir-blur3)"/>
+  <circle cx="520" cy="350" r="1.4" fill="#cfd8dc" opacity="0.25" filter="url(#ir-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#ir-glow)">IRON RESOLVE</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#90a4ae" letter-spacing="5" opacity="0.65">DETERMINATION FOCUS</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#546e7a" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#90a4ae" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#546e7a" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

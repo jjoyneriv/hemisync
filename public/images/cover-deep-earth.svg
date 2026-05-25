@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="de-bg" cx="50%" cy="60%" r="75%">
+      <stop offset="0%" stop-color="#2a1a0a"/>
+      <stop offset="45%" stop-color="#150e05"/>
+      <stop offset="100%" stop-color="#080502"/>
+    </radialGradient>
+    <radialGradient id="de-nebula1" cx="50%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#d4920a" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#8b5e0a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="de-nebula2" cx="40%" cy="65%" r="40%">
+      <stop offset="0%" stop-color="#c87020" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#6b3a10" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="de-nebula3" cx="60%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#a08060" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="de-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb347" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#d4920a" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#8b5e0a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="de-layer1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6b4e2a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3a2810" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="de-layer2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b6e3a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5a3e1a" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="de-layer3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a08050" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6b5030" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="de-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="de-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="de-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="de-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#de-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="400" cy="380" rx="300" ry="220" fill="url(#de-nebula1)" filter="url(#de-blur1)"/>
+  <ellipse cx="350" cy="420" rx="240" ry="180" fill="url(#de-nebula2)" filter="url(#de-blur1)"/>
+  <ellipse cx="480" cy="350" rx="200" ry="160" fill="url(#de-nebula3)" filter="url(#de-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffe8c0" opacity="0.5"/>
+  <circle cx="220" cy="45" r="0.8" fill="#ffd8a0" opacity="0.4"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.55"/>
+  <circle cx="525" cy="55" r="1" fill="#ffe0b0" opacity="0.45"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.4"/>
+  <circle cx="715" cy="35" r="0.9" fill="#ffd890" opacity="0.35"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="740" cy="240" r="1" fill="#ffe8c0" opacity="0.35"/>
+  <circle cx="50" cy="370" r="0.9" fill="#ffd8a0" opacity="0.35"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="670" cy="150" r="0.7" fill="#ffe0b0" opacity="0.45"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.35"/>
+  <circle cx="630" cy="460" r="1.2" fill="#ffd890" opacity="0.4"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="315" cy="490" r="1.1" fill="#ffe8c0" opacity="0.3"/>
+
+  <!-- Geological layers — earth cross-section (arc shapes) -->
+  <path d="M150 480 Q400 350, 650 480" fill="none" stroke="url(#de-layer1)" stroke-width="2" opacity="0.4"/>
+  <path d="M120 500 Q400 380, 680 500" fill="none" stroke="url(#de-layer2)" stroke-width="1.5" opacity="0.35"/>
+  <path d="M100 520 Q400 410, 700 520" fill="none" stroke="url(#de-layer3)" stroke-width="1.2" opacity="0.3"/>
+  <path d="M130 460 Q400 320, 670 460" fill="none" stroke="#5a3e1a" stroke-width="1" opacity="0.25"/>
+  <path d="M170 440 Q400 300, 630 440" fill="none" stroke="#4a3015" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- Cave entrance shape -->
+  <path d="M300 500 Q320 420, 400 400 Q480 420, 500 500"
+        fill="none" stroke="#8b6e3a" stroke-width="1.5" opacity="0.3"/>
+  <path d="M320 500 Q340 440, 400 425 Q460 440, 480 500"
+        fill="none" stroke="#a08050" stroke-width="1" opacity="0.25"/>
+
+  <!-- Root-like structures descending -->
+  <path d="M400 430 Q390 460, 370 500 Q360 520, 340 540" fill="none" stroke="#6b4e2a" stroke-width="0.8" opacity="0.3"/>
+  <path d="M400 430 Q410 465, 430 500 Q440 525, 460 540" fill="none" stroke="#6b4e2a" stroke-width="0.8" opacity="0.3"/>
+  <path d="M400 430 Q395 470, 385 510 Q375 535, 355 550" fill="none" stroke="#5a3e1a" stroke-width="0.6" opacity="0.2"/>
+  <path d="M400 430 Q405 475, 415 515 Q425 540, 445 555" fill="none" stroke="#5a3e1a" stroke-width="0.6" opacity="0.2"/>
+  <path d="M370 500 Q355 520, 330 530" fill="none" stroke="#4a3015" stroke-width="0.5" opacity="0.15"/>
+  <path d="M430 500 Q445 520, 470 530" fill="none" stroke="#4a3015" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Warm amber core glow -->
+  <circle cx="400" cy="400" r="80" fill="url(#de-core)" filter="url(#de-blur2)" opacity="0.5"/>
+  <circle cx="400" cy="400" r="40" fill="url(#de-core)" filter="url(#de-blur3)" opacity="0.6"/>
+  <circle cx="400" cy="400" r="15" fill="#ffb347" opacity="0.4" filter="url(#de-glow)"/>
+  <circle cx="400" cy="400" r="5" fill="#ffe0a0" opacity="0.7"/>
+
+  <!-- Stone texture dots -->
+  <circle cx="250" cy="470" r="2" fill="#6b4e2a" opacity="0.2"/>
+  <circle cx="550" cy="475" r="1.8" fill="#5a3e1a" opacity="0.18"/>
+  <circle cx="300" cy="490" r="1.5" fill="#8b6e3a" opacity="0.15"/>
+  <circle cx="500" cy="485" r="2.2" fill="#6b4e2a" opacity="0.17"/>
+  <circle cx="350" cy="510" r="1.3" fill="#4a3015" opacity="0.12"/>
+  <circle cx="450" cy="505" r="1.6" fill="#5a3e1a" opacity="0.14"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#de-glow)">DEEP EARTH</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#d4a050" letter-spacing="6" opacity="0.65">GROUNDING MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#8b6e3a" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#d4a050" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#8b6e3a" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

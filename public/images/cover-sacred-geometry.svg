@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="sg-bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#2a0a28"/>
+      <stop offset="35%" stop-color="#1a0618"/>
+      <stop offset="100%" stop-color="#0a030a"/>
+    </radialGradient>
+    <radialGradient id="sg-centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff44cc" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#cc2299" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#660044" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sg-goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffcc44" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#aa7700" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sg-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="sg-blur2">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="sg-blur3">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="sg-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sg-softGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#sg-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="350" cy="280" rx="220" ry="200" fill="#881166" opacity="0.06" filter="url(#sg-blur1)"/>
+  <ellipse cx="480" cy="310" rx="190" ry="170" fill="#cc3399" opacity="0.04" filter="url(#sg-blur1)"/>
+  <ellipse cx="400" cy="350" rx="200" ry="120" fill="#aa2277" opacity="0.05" filter="url(#sg-blur1)"/>
+  <ellipse cx="400" cy="300" rx="100" ry="100" fill="#ffcc44" opacity="0.03" filter="url(#sg-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="100" cy="55" r="1.1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="230" cy="38" r="0.8" fill="#ffddee" opacity="0.6"/>
+  <circle cx="360" cy="70" r="1.4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="510" cy="48" r="1" fill="#ffeedd" opacity="0.7"/>
+  <circle cx="645" cy="82" r="1.2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="720" cy="40" r="0.9" fill="#ffddee" opacity="0.5"/>
+  <circle cx="65" cy="175" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="740" cy="195" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="50" cy="345" r="0.9" fill="#ffeedd" opacity="0.5"/>
+  <circle cx="755" cy="370" r="1.1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="135" cy="135" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="670" cy="148" r="0.7" fill="#ffddee" opacity="0.6"/>
+  <circle cx="180" cy="425" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="630" cy="440" r="1.2" fill="#ffeedd" opacity="0.6"/>
+  <circle cx="470" cy="105" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="300" cy="470" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="570" cy="480" r="0.9" fill="#ffddee" opacity="0.5"/>
+  <circle cx="210" cy="300" r="0.7" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Center glow -->
+  <ellipse cx="400" cy="310" rx="160" ry="160" fill="url(#sg-centerGlow)" filter="url(#sg-blur2)"/>
+  <ellipse cx="400" cy="310" rx="80" ry="80" fill="url(#sg-goldGlow)" filter="url(#sg-blur2)"/>
+
+  <!-- Flower of Life pattern - 7 overlapping circles -->
+  <!-- Center circle -->
+  <circle cx="400" cy="310" r="60" stroke="#dd66aa" stroke-width="0.6" fill="none" opacity="0.3"/>
+  <!-- Top -->
+  <circle cx="400" cy="250" r="60" stroke="#cc5599" stroke-width="0.5" fill="none" opacity="0.22"/>
+  <!-- Bottom -->
+  <circle cx="400" cy="370" r="60" stroke="#cc5599" stroke-width="0.5" fill="none" opacity="0.22"/>
+  <!-- Top-right -->
+  <circle cx="452" cy="280" r="60" stroke="#bb4488" stroke-width="0.5" fill="none" opacity="0.2"/>
+  <!-- Top-left -->
+  <circle cx="348" cy="280" r="60" stroke="#bb4488" stroke-width="0.5" fill="none" opacity="0.2"/>
+  <!-- Bottom-right -->
+  <circle cx="452" cy="340" r="60" stroke="#bb4488" stroke-width="0.5" fill="none" opacity="0.2"/>
+  <!-- Bottom-left -->
+  <circle cx="348" cy="340" r="60" stroke="#bb4488" stroke-width="0.5" fill="none" opacity="0.2"/>
+
+  <!-- Outer ring of flower of life -->
+  <circle cx="400" cy="190" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+  <circle cx="400" cy="430" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+  <circle cx="504" cy="250" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+  <circle cx="296" cy="250" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+  <circle cx="504" cy="370" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+  <circle cx="296" cy="370" r="60" stroke="#aa3377" stroke-width="0.4" fill="none" opacity="0.12"/>
+
+  <!-- Enclosing circle -->
+  <circle cx="400" cy="310" r="175" stroke="#dd88bb" stroke-width="0.5" fill="none" opacity="0.2"/>
+
+  <!-- Triangle (upward) -->
+  <polygon points="400,155 555,430 245,430" stroke="#ffcc66" stroke-width="0.7" fill="none" opacity="0.2"/>
+  <!-- Triangle (downward) -->
+  <polygon points="400,465 555,190 245,190" stroke="#ffcc66" stroke-width="0.7" fill="none" opacity="0.2"/>
+
+  <!-- Hexagon -->
+  <polygon points="400,155 555,232 555,388 400,465 245,388 245,232" stroke="#ffaa44" stroke-width="0.5" fill="none" opacity="0.15"/>
+
+  <!-- Inner hexagon -->
+  <polygon points="400,220 480,265 480,355 400,400 320,355 320,265" stroke="#ffbb55" stroke-width="0.4" fill="none" opacity="0.18"/>
+
+  <!-- Golden ratio spiral (approximated) -->
+  <path d="M400,310 Q400,280 420,270 Q445,260 455,285 Q470,315 445,340 Q415,370 380,355 Q340,335 350,295 Q360,250 405,235 Q455,220 480,260" stroke="#ffcc44" stroke-width="0.6" fill="none" opacity="0.2" filter="url(#sg-softGlow)"/>
+  <path d="M480,260 Q510,310 485,360 Q455,415 395,420 Q330,420 300,370 Q270,315 300,255 Q335,195 405,180" stroke="#ffbb33" stroke-width="0.5" fill="none" opacity="0.12"/>
+
+  <!-- Center sacred dot -->
+  <circle cx="400" cy="310" r="5" fill="#ffcc88" opacity="0.4" filter="url(#sg-blur3)"/>
+  <circle cx="400" cy="310" r="2" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Intersection highlight dots -->
+  <circle cx="400" cy="250" r="2" fill="#ff88cc" opacity="0.3" filter="url(#sg-blur3)"/>
+  <circle cx="400" cy="370" r="2" fill="#ff88cc" opacity="0.3" filter="url(#sg-blur3)"/>
+  <circle cx="452" cy="280" r="2" fill="#ff88cc" opacity="0.25" filter="url(#sg-blur3)"/>
+  <circle cx="348" cy="280" r="2" fill="#ff88cc" opacity="0.25" filter="url(#sg-blur3)"/>
+  <circle cx="452" cy="340" r="2" fill="#ff88cc" opacity="0.25" filter="url(#sg-blur3)"/>
+  <circle cx="348" cy="340" r="2" fill="#ff88cc" opacity="0.25" filter="url(#sg-blur3)"/>
+
+  <!-- Vertex dots on triangles -->
+  <circle cx="400" cy="155" r="2.5" fill="#ffcc66" opacity="0.3" filter="url(#sg-blur3)"/>
+  <circle cx="555" cy="430" r="2.5" fill="#ffcc66" opacity="0.2" filter="url(#sg-blur3)"/>
+  <circle cx="245" cy="430" r="2.5" fill="#ffcc66" opacity="0.2" filter="url(#sg-blur3)"/>
+  <circle cx="400" cy="465" r="2.5" fill="#ffcc66" opacity="0.25" filter="url(#sg-blur3)"/>
+  <circle cx="555" cy="190" r="2.5" fill="#ffcc66" opacity="0.2" filter="url(#sg-blur3)"/>
+  <circle cx="245" cy="190" r="2.5" fill="#ffcc66" opacity="0.2" filter="url(#sg-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="590" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#ffffff" letter-spacing="3" filter="url(#sg-glow)">SACRED GEOMETRY</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#dd77aa" letter-spacing="6">HARMONIC MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="290" y1="665" x2="510" y2="665" stroke="#aa5588" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Branding -->
+  <text x="400" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#886677" letter-spacing="4">HEMISYNC.ORG</text>
+</svg>

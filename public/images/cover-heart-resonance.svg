@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="hr-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#2a0a15"/>
+      <stop offset="45%" stop-color="#1a060e"/>
+      <stop offset="100%" stop-color="#0a0206"/>
+    </radialGradient>
+    <radialGradient id="hr-nebula1" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#c62828" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#b71c1c" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hr-nebula2" cx="60%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#e91e63" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#880e4f" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hr-nebula3" cx="50%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#f48fb1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hr-coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff8a80" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#e53935" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#c62828" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hr-warmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff5252" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#d32f2f" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hr-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="hr-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="hr-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="hr-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#hr-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="310" cy="300" rx="260" ry="210" fill="url(#hr-nebula1)" filter="url(#hr-blur1)"/>
+  <ellipse cx="510" cy="380" rx="230" ry="180" fill="url(#hr-nebula2)" filter="url(#hr-blur1)"/>
+  <ellipse cx="400" cy="290" rx="180" ry="130" fill="url(#hr-nebula3)" filter="url(#hr-blur1)"/>
+
+  <!-- Stars field -->
+  <circle cx="95" cy="58" r="1.2" fill="#ffffff" opacity="0.65"/>
+  <circle cx="232" cy="48" r="0.8" fill="#ffcdd2" opacity="0.6"/>
+  <circle cx="378" cy="72" r="1.4" fill="#ffffff" opacity="0.75"/>
+  <circle cx="528" cy="55" r="1" fill="#f8bbd0" opacity="0.6"/>
+  <circle cx="645" cy="88" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="712" cy="42" r="0.9" fill="#ffcdd2" opacity="0.5"/>
+  <circle cx="68" cy="212" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="738" cy="228" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="48" cy="368" r="0.9" fill="#ffcdd2" opacity="0.5"/>
+  <circle cx="752" cy="352" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="138" cy="148" r="1.5" fill="#ffffff" opacity="0.75"/>
+  <circle cx="665" cy="158" r="0.7" fill="#f8bbd0" opacity="0.55"/>
+  <circle cx="178" cy="452" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="625" cy="462" r="1.2" fill="#ffcdd2" opacity="0.55"/>
+  <circle cx="488" cy="108" r="0.8" fill="#ffffff" opacity="0.65"/>
+  <circle cx="312" cy="498" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="568" cy="738" r="0.7" fill="#ffffff" opacity="0.45"/>
+  <circle cx="218" cy="712" r="0.9" fill="#ffcdd2" opacity="0.4"/>
+  <circle cx="442" cy="768" r="0.6" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Warm glowing core -->
+  <circle cx="400" cy="310" r="80" fill="url(#hr-warmGlow)" filter="url(#hr-blur1)"/>
+  <circle cx="400" cy="310" r="40" fill="url(#hr-coreGlow)" filter="url(#hr-blur2)"/>
+  <circle cx="400" cy="310" r="15" fill="#ff8a80" opacity="0.2" filter="url(#hr-blur3)"/>
+  <circle cx="400" cy="310" r="5" fill="#ffcdd2" opacity="0.5"/>
+
+  <!-- Heart shape 1 (outermost) -->
+  <path d="M400 450 C400 450, 250 380, 250 280 C250 220, 300 180, 340 180 C365 180, 385 195, 400 215 C415 195, 435 180, 460 180 C500 180, 550 220, 550 280 C550 380, 400 450, 400 450Z"
+    stroke="#e53935" stroke-width="0.8" fill="none" opacity="0.15"/>
+
+  <!-- Heart shape 2 (medium) -->
+  <path d="M400 420 C400 420, 280 365, 280 285 C280 238, 318 208, 350 208 C370 208, 387 218, 400 235 C413 218, 430 208, 450 208 C482 208, 520 238, 520 285 C520 365, 400 420, 400 420Z"
+    stroke="#ef5350" stroke-width="0.7" fill="none" opacity="0.18"/>
+
+  <!-- Heart shape 3 (inner) -->
+  <path d="M400 390 C400 390, 310 348, 310 290 C310 255, 338 232, 362 232 C378 232, 390 240, 400 253 C410 240, 422 232, 438 232 C462 232, 490 255, 490 290 C490 348, 400 390, 400 390Z"
+    stroke="#ff5252" stroke-width="0.6" fill="none" opacity="0.2"/>
+
+  <!-- Heart shape 4 (innermost) -->
+  <path d="M400 360 C400 360, 340 332, 340 296 C340 272, 358 258, 375 258 C385 258, 393 263, 400 272 C407 263, 415 258, 425 258 C442 258, 460 272, 460 296 C460 332, 400 360, 400 360Z"
+    stroke="#ff8a80" stroke-width="0.5" fill="none" opacity="0.25"/>
+
+  <!-- Radiating warmth waves -->
+  <circle cx="400" cy="310" r="160" stroke="#e53935" stroke-width="0.4" fill="none" opacity="0.06"/>
+  <circle cx="400" cy="310" r="190" stroke="#c62828" stroke-width="0.3" fill="none" opacity="0.05"/>
+  <circle cx="400" cy="310" r="220" stroke="#b71c1c" stroke-width="0.3" fill="none" opacity="0.04"/>
+  <circle cx="400" cy="310" r="250" stroke="#880e4f" stroke-width="0.2" fill="none" opacity="0.03"/>
+
+  <!-- Radiating warmth lines (subtle) -->
+  <line x1="400" y1="310" x2="400" y2="100" stroke="#ef5350" stroke-width="0.3" opacity="0.06"/>
+  <line x1="400" y1="310" x2="220" y2="150" stroke="#ef5350" stroke-width="0.3" opacity="0.05"/>
+  <line x1="400" y1="310" x2="580" y2="150" stroke="#ef5350" stroke-width="0.3" opacity="0.05"/>
+  <line x1="400" y1="310" x2="150" y2="310" stroke="#ef5350" stroke-width="0.3" opacity="0.04"/>
+  <line x1="400" y1="310" x2="650" y2="310" stroke="#ef5350" stroke-width="0.3" opacity="0.04"/>
+  <line x1="400" y1="310" x2="240" y2="470" stroke="#ef5350" stroke-width="0.3" opacity="0.04"/>
+  <line x1="400" y1="310" x2="560" y2="470" stroke="#ef5350" stroke-width="0.3" opacity="0.04"/>
+  <line x1="400" y1="310" x2="400" y2="520" stroke="#ef5350" stroke-width="0.3" opacity="0.05"/>
+
+  <!-- Floating warmth particles -->
+  <circle cx="350" cy="240" r="1.5" fill="#ff8a80" opacity="0.35" filter="url(#hr-blur3)"/>
+  <circle cx="455" cy="245" r="1.3" fill="#ff5252" opacity="0.3" filter="url(#hr-blur3)"/>
+  <circle cx="320" cy="350" r="1.8" fill="#ef5350" opacity="0.25" filter="url(#hr-blur3)"/>
+  <circle cx="480" cy="360" r="1.2" fill="#ff8a80" opacity="0.3" filter="url(#hr-blur3)"/>
+  <circle cx="380" cy="200" r="1" fill="#ffcdd2" opacity="0.25" filter="url(#hr-blur3)"/>
+  <circle cx="430" cy="430" r="1.4" fill="#ef5350" opacity="0.2" filter="url(#hr-blur3)"/>
+  <circle cx="280" cy="290" r="1.1" fill="#ff5252" opacity="0.2" filter="url(#hr-blur3)"/>
+  <circle cx="520" cy="300" r="1.3" fill="#ff8a80" opacity="0.2" filter="url(#hr-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="3" opacity="0.9" filter="url(#hr-glow)">HEART RESONANCE</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ef9a9a" letter-spacing="6" opacity="0.65">EMOTIONAL BALANCE</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#e53935" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#ef5350" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c62828" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

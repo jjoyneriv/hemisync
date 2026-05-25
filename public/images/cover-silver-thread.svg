@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="st-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a1a24"/>
+      <stop offset="45%" stop-color="#0e0e16"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+    <radialGradient id="st-nebula1" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#c0c0c0" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#808080" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="st-nebula2" cx="60%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#d0d0e0" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#9090a0" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="st-nebula3" cx="50%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#e8e8f0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="st-needleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="20%" stop-color="#e0e0f0" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#b0b0c8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="st-threadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#808090" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#c0c0d0" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#e8e8f8" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#c0c0d0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#808090" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="st-filigree" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a0a0b0" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#d0d0e0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#a0a0b0" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="st-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="st-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="st-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="st-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="st-brightglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#st-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="320" cy="320" rx="280" ry="220" fill="url(#st-nebula1)" filter="url(#st-blur1)"/>
+  <ellipse cx="500" cy="400" rx="240" ry="180" fill="url(#st-nebula2)" filter="url(#st-blur1)"/>
+  <ellipse cx="400" cy="280" rx="180" ry="140" fill="url(#st-nebula3)" filter="url(#st-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="220" cy="45" r="0.8" fill="#e0e0f0" opacity="0.6"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.75"/>
+  <circle cx="525" cy="55" r="1" fill="#d0d0e0" opacity="0.65"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="715" cy="35" r="0.9" fill="#c8c8d8" opacity="0.5"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="740" cy="240" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="50" cy="370" r="0.9" fill="#e0e0f0" opacity="0.5"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="670" cy="150" r="0.7" fill="#d0d0e8" opacity="0.6"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="630" cy="460" r="1.2" fill="#c8c8d8" opacity="0.55"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="315" cy="490" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="560" cy="740" r="0.7" fill="#ffffff" opacity="0.4"/>
+  <circle cx="250" cy="720" r="0.9" fill="#e0e0f0" opacity="0.45"/>
+  <circle cx="440" cy="770" r="0.6" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Silver thread curves weaving through space -->
+  <path d="M80 200 Q200 150, 300 250 Q380 330, 400 300 Q420 270, 500 320 Q600 380, 720 280"
+        fill="none" stroke="url(#st-threadGrad)" stroke-width="1.2" opacity="0.5"/>
+  <path d="M60 350 Q180 280, 280 350 Q360 410, 400 360 Q440 310, 540 370 Q640 430, 740 350"
+        fill="none" stroke="url(#st-threadGrad)" stroke-width="0.8" opacity="0.35"/>
+  <path d="M100 420 Q220 370, 320 430 Q380 470, 420 420 Q460 370, 560 410 Q660 450, 700 400"
+        fill="none" stroke="url(#st-threadGrad)" stroke-width="0.6" opacity="0.25"/>
+  <path d="M120 160 Q250 220, 350 180 Q400 160, 450 200 Q550 260, 680 190"
+        fill="none" stroke="url(#st-threadGrad)" stroke-width="0.7" opacity="0.3"/>
+  <path d="M150 480 Q280 420, 380 470 Q420 490, 460 460 Q540 400, 650 470"
+        fill="none" stroke="url(#st-threadGrad)" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Filigree patterns — delicate ornamental curves -->
+  <path d="M350 280 Q370 260, 400 270 Q430 280, 420 300 Q410 320, 390 310 Q370 300, 350 280Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.5" opacity="0.25"/>
+  <path d="M380 300 Q400 280, 430 290 Q460 300, 450 330 Q440 360, 410 340 Q380 320, 380 300Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.4" opacity="0.2"/>
+  <path d="M320 320 Q340 290, 370 300 Q390 310, 380 340 Q370 370, 340 350 Q310 330, 320 320Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.4" opacity="0.2"/>
+  <path d="M420 260 Q445 240, 470 255 Q490 270, 475 295 Q460 310, 440 295 Q420 280, 420 260Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.35" opacity="0.18"/>
+  <path d="M300 350 Q325 330, 350 345 Q370 360, 355 385 Q340 400, 320 385 Q300 370, 300 350Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.35" opacity="0.18"/>
+  <path d="M450 320 Q475 300, 500 315 Q515 330, 500 355 Q485 370, 465 355 Q450 340, 450 320Z"
+        fill="none" stroke="url(#st-filigree)" stroke-width="0.3" opacity="0.15"/>
+
+  <!-- Silver needle point of light — convergence point -->
+  <circle cx="400" cy="310" r="60" fill="url(#st-needleGlow)" filter="url(#st-blur2)" opacity="0.4"/>
+  <circle cx="400" cy="310" r="25" fill="url(#st-needleGlow)" filter="url(#st-blur3)" opacity="0.5"/>
+  <circle cx="400" cy="310" r="8" fill="#e8e8ff" opacity="0.6" filter="url(#st-brightglow)"/>
+  <circle cx="400" cy="310" r="3" fill="#ffffff" opacity="0.9"/>
+
+  <!-- Thread lines converging to needle point -->
+  <line x1="250" y1="200" x2="397" y2="307" stroke="#c0c0d8" stroke-width="0.4" opacity="0.2"/>
+  <line x1="550" y1="220" x2="403" y2="307" stroke="#c0c0d8" stroke-width="0.4" opacity="0.2"/>
+  <line x1="280" y1="430" x2="397" y2="313" stroke="#c0c0d8" stroke-width="0.3" opacity="0.15"/>
+  <line x1="520" y1="420" x2="403" y2="313" stroke="#c0c0d8" stroke-width="0.3" opacity="0.15"/>
+  <line x1="200" y1="310" x2="392" y2="310" stroke="#c0c0d8" stroke-width="0.35" opacity="0.18"/>
+  <line x1="600" y1="310" x2="408" y2="310" stroke="#c0c0d8" stroke-width="0.35" opacity="0.18"/>
+
+  <!-- Floating silver particles -->
+  <circle cx="300" cy="250" r="1.5" fill="#d0d0e8" opacity="0.4" filter="url(#st-blur3)"/>
+  <circle cx="500" cy="280" r="1.2" fill="#c8c8e0" opacity="0.35" filter="url(#st-blur3)"/>
+  <circle cx="350" cy="380" r="1.8" fill="#e0e0f0" opacity="0.3" filter="url(#st-blur3)"/>
+  <circle cx="450" cy="400" r="1" fill="#d8d8e8" opacity="0.3" filter="url(#st-blur3)"/>
+  <circle cx="280" cy="420" r="1.3" fill="#c0c0d8" opacity="0.25" filter="url(#st-blur3)"/>
+  <circle cx="520" cy="370" r="1.4" fill="#e0e0f0" opacity="0.3" filter="url(#st-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#st-glow)">SILVER THREAD</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#b0b0c8" letter-spacing="6" opacity="0.65">INTUITION PRACTICE</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#808098" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#c0c0d8" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#808098" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

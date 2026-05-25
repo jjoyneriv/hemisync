@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="sf-bg" cx="45%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#2a0a2a"/>
+      <stop offset="40%" stop-color="#180818"/>
+      <stop offset="100%" stop-color="#0a040a"/>
+    </radialGradient>
+    <radialGradient id="sf-nebula1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff44aa" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#cc2288" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#660044" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sf-nebula2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6699" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#880044" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sf-nebula3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dd3388" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#550033" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sf-shoot1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#ffaacc" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff44aa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sf-shoot2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#ffaadd" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#cc3399" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="sf-blur1">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="sf-blur2">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+    <filter id="sf-blur3">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="sf-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sf-starGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#sf-bg)"/>
+
+  <!-- Nebula swirls -->
+  <ellipse cx="300" cy="280" rx="220" ry="160" fill="url(#sf-nebula1)" filter="url(#sf-blur1)" transform="rotate(-15,300,280)"/>
+  <ellipse cx="520" cy="320" rx="200" ry="140" fill="url(#sf-nebula2)" filter="url(#sf-blur1)" transform="rotate(20,520,320)"/>
+  <ellipse cx="380" cy="200" rx="180" ry="120" fill="url(#sf-nebula3)" filter="url(#sf-blur1)" transform="rotate(-8,380,200)"/>
+  <ellipse cx="450" cy="400" rx="160" ry="100" fill="url(#sf-nebula1)" filter="url(#sf-blur1)" transform="rotate(12,450,400)"/>
+  <ellipse cx="250" cy="420" rx="140" ry="90" fill="url(#sf-nebula3)" filter="url(#sf-blur1)" transform="rotate(-25,250,420)"/>
+
+  <!-- Cosmic dust bands -->
+  <path d="M50,200 Q200,180 350,220 Q500,260 650,230 Q750,210 800,220" stroke="#ff55aa" stroke-width="40" fill="none" opacity="0.03" filter="url(#sf-blur1)"/>
+  <path d="M0,350 Q150,320 300,360 Q450,400 600,370 Q750,340 800,360" stroke="#cc3388" stroke-width="50" fill="none" opacity="0.025" filter="url(#sf-blur1)"/>
+
+  <!-- Dense starfield - bright stars -->
+  <circle cx="120" cy="75" r="1.8" fill="#ffffff" opacity="0.9" filter="url(#sf-starGlow)"/>
+  <circle cx="245" cy="48" r="1.2" fill="#ffccee" opacity="0.8"/>
+  <circle cx="380" cy="85" r="2" fill="#ffffff" opacity="0.95" filter="url(#sf-starGlow)"/>
+  <circle cx="520" cy="62" r="1.5" fill="#ffddef" opacity="0.85"/>
+  <circle cx="655" cy="90" r="1.8" fill="#ffffff" opacity="0.9" filter="url(#sf-starGlow)"/>
+  <circle cx="710" cy="50" r="1.1" fill="#ffccee" opacity="0.7"/>
+  <circle cx="85" cy="195" r="1.4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="195" cy="280" r="1.6" fill="#ffddef" opacity="0.85"/>
+  <circle cx="690" cy="215" r="1.3" fill="#ffffff" opacity="0.75"/>
+  <circle cx="610" cy="300" r="1.7" fill="#ffccee" opacity="0.8"/>
+  <circle cx="55" cy="380" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="745" cy="375" r="1.5" fill="#ffddef" opacity="0.75"/>
+  <circle cx="155" cy="145" r="2.2" fill="#ffffff" opacity="0.95" filter="url(#sf-starGlow)"/>
+  <circle cx="445" cy="125" r="1" fill="#ffccee" opacity="0.7"/>
+  <circle cx="335" cy="165" r="1.3" fill="#ffffff" opacity="0.75"/>
+  <circle cx="575" cy="170" r="1.6" fill="#ffddef" opacity="0.8"/>
+  <!-- Medium stars -->
+  <circle cx="170" cy="340" r="0.9" fill="#ffffff" opacity="0.6"/>
+  <circle cx="300" cy="380" r="1.1" fill="#ffddee" opacity="0.65"/>
+  <circle cx="480" cy="220" r="0.8" fill="#ffffff" opacity="0.55"/>
+  <circle cx="550" cy="420" r="1" fill="#ffccdd" opacity="0.6"/>
+  <circle cx="230" cy="200" r="0.7" fill="#ffffff" opacity="0.5"/>
+  <circle cx="420" cy="350" r="1.2" fill="#ffddef" opacity="0.7"/>
+  <circle cx="680" cy="440" r="0.9" fill="#ffffff" opacity="0.55"/>
+  <circle cx="100" cy="440" r="1.1" fill="#ffddee" opacity="0.6"/>
+  <!-- Dim stars -->
+  <circle cx="310" cy="100" r="0.6" fill="#ffffff" opacity="0.4"/>
+  <circle cx="590" cy="130" r="0.5" fill="#ffccee" opacity="0.35"/>
+  <circle cx="140" cy="260" r="0.7" fill="#ffffff" opacity="0.4"/>
+  <circle cx="720" cy="290" r="0.6" fill="#ffddef" opacity="0.35"/>
+  <circle cx="350" cy="430" r="0.5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="630" cy="350" r="0.7" fill="#ffccdd" opacity="0.4"/>
+  <circle cx="200" cy="480" r="0.6" fill="#ffffff" opacity="0.35"/>
+  <circle cx="500" cy="470" r="0.5" fill="#ffddef" opacity="0.3"/>
+  <circle cx="260" cy="310" r="0.4" fill="#ffffff" opacity="0.3"/>
+  <circle cx="470" cy="280" r="0.5" fill="#ffccee" opacity="0.3"/>
+  <circle cx="400" cy="450" r="0.6" fill="#ffffff" opacity="0.35"/>
+  <circle cx="750" cy="160" r="0.7" fill="#ffddef" opacity="0.4"/>
+
+  <!-- Shooting stars -->
+  <line x1="180" y1="120" x2="260" y2="180" stroke="url(#sf-shoot1)" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="180" cy="120" r="2" fill="#ffffff" opacity="0.9" filter="url(#sf-starGlow)"/>
+
+  <line x1="550" y1="80" x2="610" y2="130" stroke="url(#sf-shoot2)" stroke-width="1.2" opacity="0.5"/>
+  <circle cx="550" cy="80" r="1.5" fill="#ffffff" opacity="0.8" filter="url(#sf-starGlow)"/>
+
+  <line x1="650" y1="200" x2="700" y2="240" stroke="url(#sf-shoot1)" stroke-width="1" opacity="0.4"/>
+  <circle cx="650" cy="200" r="1.3" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Brighter nebula highlights -->
+  <ellipse cx="350" cy="250" rx="60" ry="40" fill="#ff66bb" opacity="0.06" filter="url(#sf-blur2)"/>
+  <ellipse cx="480" cy="300" rx="50" ry="35" fill="#ff88cc" opacity="0.05" filter="url(#sf-blur2)"/>
+  <ellipse cx="400" cy="380" rx="70" ry="30" fill="#ee55aa" opacity="0.04" filter="url(#sf-blur2)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="3" filter="url(#sf-glow)">STARFIELD</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff88bb" letter-spacing="6">CREATIVE EXPANSION</text>
+
+  <!-- Decorative line -->
+  <line x1="305" y1="668" x2="495" y2="668" stroke="#cc4488" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#996677" letter-spacing="4">HEMISYNC.ORG</text>
+</svg>

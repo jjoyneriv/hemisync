@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="bl-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#0a1a28"/>
+      <stop offset="45%" stop-color="#05101a"/>
+      <stop offset="100%" stop-color="#02080c"/>
+    </radialGradient>
+    <radialGradient id="bl-nebula1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#0288d1" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#01579b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bl-nebula2" cx="40%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#00897b" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#004d40" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bl-nebula3" cx="55%" cy="38%" r="35%">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bl-centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#80cbc4" stop-opacity="0.5"/>
+      <stop offset="30%" stop-color="#26a69a" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#00796b" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bl-lungGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#29b6f6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0288d1" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="bl-breathWave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26a69a" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#4db6ac" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#80cbc4" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#4db6ac" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#26a69a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="bl-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="bl-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="bl-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="bl-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bl-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="400" cy="330" rx="300" ry="220" fill="url(#bl-nebula1)" filter="url(#bl-blur1)"/>
+  <ellipse cx="350" cy="380" rx="250" ry="200" fill="url(#bl-nebula2)" filter="url(#bl-blur1)"/>
+  <ellipse cx="440" cy="300" rx="200" ry="160" fill="url(#bl-nebula3)" filter="url(#bl-blur1)"/>
+
+  <!-- Stars -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="220" cy="45" r="0.8" fill="#b2dfdb" opacity="0.5"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.65"/>
+  <circle cx="525" cy="55" r="1" fill="#b3e5fc" opacity="0.55"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.5"/>
+  <circle cx="715" cy="35" r="0.9" fill="#b2dfdb" opacity="0.4"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="740" cy="240" r="1" fill="#b3e5fc" opacity="0.45"/>
+  <circle cx="50" cy="370" r="0.9" fill="#b2dfdb" opacity="0.4"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="670" cy="150" r="0.7" fill="#b3e5fc" opacity="0.5"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="630" cy="460" r="1.2" fill="#b2dfdb" opacity="0.45"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.6"/>
+  <circle cx="315" cy="490" r="1.1" fill="#b3e5fc" opacity="0.35"/>
+  <circle cx="560" cy="740" r="0.7" fill="#ffffff" opacity="0.3"/>
+  <circle cx="250" cy="720" r="0.9" fill="#b2dfdb" opacity="0.35"/>
+
+  <!-- Lungs-inspired symmetrical curves — left lung -->
+  <path d="M400 260 Q350 280, 310 330 Q280 380, 290 430 Q300 460, 330 470 Q360 475, 380 450 Q395 420, 400 380"
+        fill="none" stroke="#4fc3f7" stroke-width="1" opacity="0.3"/>
+  <path d="M400 280 Q360 295, 330 340 Q305 380, 315 420 Q325 445, 345 450 Q365 452, 380 435 Q392 410, 400 380"
+        fill="none" stroke="#4db6ac" stroke-width="0.7" opacity="0.25"/>
+
+  <!-- Lungs-inspired symmetrical curves — right lung -->
+  <path d="M400 260 Q450 280, 490 330 Q520 380, 510 430 Q500 460, 470 470 Q440 475, 420 450 Q405 420, 400 380"
+        fill="none" stroke="#4fc3f7" stroke-width="1" opacity="0.3"/>
+  <path d="M400 280 Q440 295, 470 340 Q495 380, 485 420 Q475 445, 455 450 Q435 452, 420 435 Q408 410, 400 380"
+        fill="none" stroke="#4db6ac" stroke-width="0.7" opacity="0.25"/>
+
+  <!-- Central trachea line -->
+  <line x1="400" y1="220" x2="400" y2="280" stroke="#80cbc4" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Breathing wave patterns — sinusoidal -->
+  <path d="M150 350 Q225 320, 300 350 Q350 370, 400 350 Q450 330, 500 350 Q575 380, 650 350"
+        fill="none" stroke="url(#bl-breathWave)" stroke-width="1.2" opacity="0.3" filter="url(#bl-glow)"/>
+  <path d="M150 370 Q225 345, 300 370 Q350 388, 400 370 Q450 352, 500 370 Q575 395, 650 370"
+        fill="none" stroke="url(#bl-breathWave)" stroke-width="0.8" opacity="0.2"/>
+  <path d="M180 390 Q250 370, 320 390 Q360 405, 400 390 Q440 375, 480 390 Q550 410, 620 390"
+        fill="none" stroke="url(#bl-breathWave)" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- Circular breath cycle — ring with directional markers -->
+  <circle cx="400" cy="340" r="100" fill="none" stroke="#26a69a" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="400" cy="340" r="80" fill="none" stroke="#4db6ac" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Breath cycle directional dots on the circle -->
+  <circle cx="400" cy="240" r="3" fill="#80cbc4" opacity="0.4" filter="url(#bl-blur3)"/>
+  <circle cx="500" cy="340" r="3" fill="#4fc3f7" opacity="0.4" filter="url(#bl-blur3)"/>
+  <circle cx="400" cy="440" r="3" fill="#80cbc4" opacity="0.4" filter="url(#bl-blur3)"/>
+  <circle cx="300" cy="340" r="3" fill="#4fc3f7" opacity="0.4" filter="url(#bl-blur3)"/>
+
+  <!-- Air flow lines — gentle curves -->
+  <path d="M400 200 Q395 230, 400 260" fill="none" stroke="#b3e5fc" stroke-width="0.5" opacity="0.2"/>
+  <path d="M390 205 Q387 235, 392 260" fill="none" stroke="#b2dfdb" stroke-width="0.4" opacity="0.15"/>
+  <path d="M410 205 Q413 235, 408 260" fill="none" stroke="#b2dfdb" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Center glow -->
+  <circle cx="400" cy="340" r="60" fill="url(#bl-centerGlow)" filter="url(#bl-blur2)" opacity="0.5"/>
+  <circle cx="400" cy="340" r="25" fill="url(#bl-centerGlow)" filter="url(#bl-blur3)" opacity="0.5"/>
+  <circle cx="400" cy="340" r="8" fill="#80cbc4" opacity="0.4" filter="url(#bl-glow)"/>
+  <circle cx="400" cy="340" r="3" fill="#e0f2f1" opacity="0.7"/>
+
+  <!-- Floating particles -->
+  <circle cx="300" cy="300" r="1.5" fill="#4fc3f7" opacity="0.4" filter="url(#bl-blur3)"/>
+  <circle cx="500" cy="320" r="1.2" fill="#4db6ac" opacity="0.35" filter="url(#bl-blur3)"/>
+  <circle cx="340" cy="420" r="1.8" fill="#80cbc4" opacity="0.3" filter="url(#bl-blur3)"/>
+  <circle cx="460" cy="410" r="1" fill="#4fc3f7" opacity="0.3" filter="url(#bl-blur3)"/>
+  <circle cx="280" cy="350" r="1.3" fill="#4db6ac" opacity="0.25" filter="url(#bl-blur3)"/>
+  <circle cx="520" cy="360" r="1.4" fill="#80cbc4" opacity="0.3" filter="url(#bl-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#bl-glow)">BREATH OF LIFE</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#4db6ac" letter-spacing="5" opacity="0.65">BREATHWORK COMPANION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#00796b" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#4db6ac" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#00796b" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

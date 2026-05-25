@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="dw-bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="45%" stop-color="#0f0620"/>
+      <stop offset="100%" stop-color="#060210"/>
+    </radialGradient>
+    <radialGradient id="dw-nebula1" cx="35%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#7b1fa2" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#4a148c" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dw-nebula2" cx="65%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#e91e63" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#ad1457" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dw-nebula3" cx="50%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#ce93d8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dw-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e1bee7" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#ba68c8" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#7b1fa2" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dw-mistGlow" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#f48fb1" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#ce93d8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dw-blur1">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="dw-blur2">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="dw-blur3">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="dw-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#dw-bg)"/>
+
+  <!-- Nebula glows -->
+  <ellipse cx="300" cy="320" rx="280" ry="220" fill="url(#dw-nebula1)" filter="url(#dw-blur1)"/>
+  <ellipse cx="530" cy="400" rx="240" ry="180" fill="url(#dw-nebula2)" filter="url(#dw-blur1)"/>
+  <ellipse cx="400" cy="280" rx="180" ry="140" fill="url(#dw-nebula3)" filter="url(#dw-blur1)"/>
+
+  <!-- Ethereal mist at bottom -->
+  <ellipse cx="400" cy="500" rx="350" ry="100" fill="url(#dw-mistGlow)" filter="url(#dw-blur1)"/>
+
+  <!-- Stars field -->
+  <circle cx="95" cy="60" r="1.2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="220" cy="45" r="0.8" fill="#f3e5f5" opacity="0.6"/>
+  <circle cx="380" cy="70" r="1.4" fill="#ffffff" opacity="0.75"/>
+  <circle cx="525" cy="55" r="1" fill="#f8bbd0" opacity="0.65"/>
+  <circle cx="655" cy="85" r="1.3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="715" cy="35" r="0.9" fill="#e1bee7" opacity="0.5"/>
+  <circle cx="70" cy="210" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="740" cy="240" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="50" cy="370" r="0.9" fill="#f3e5f5" opacity="0.5"/>
+  <circle cx="760" cy="360" r="1.1" fill="#ffffff" opacity="0.55"/>
+  <circle cx="135" cy="145" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="670" cy="150" r="0.7" fill="#f8bbd0" opacity="0.6"/>
+  <circle cx="170" cy="450" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="630" cy="460" r="1.2" fill="#e1bee7" opacity="0.55"/>
+  <circle cx="475" cy="100" r="0.8" fill="#ffffff" opacity="0.7"/>
+  <circle cx="315" cy="490" r="1.1" fill="#ffffff" opacity="0.45"/>
+  <circle cx="560" cy="740" r="0.7" fill="#ffffff" opacity="0.4"/>
+  <circle cx="250" cy="720" r="0.9" fill="#f3e5f5" opacity="0.45"/>
+  <circle cx="440" cy="770" r="0.6" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Layered moons — large background moon -->
+  <circle cx="400" cy="260" r="100" fill="url(#dw-moonGlow)" filter="url(#dw-blur2)" opacity="0.5"/>
+  <!-- Medium moon -->
+  <circle cx="400" cy="280" r="60" fill="#e1bee7" opacity="0.08" filter="url(#dw-blur2)"/>
+  <!-- Small bright moon -->
+  <circle cx="400" cy="290" r="30" fill="#f3e5f5" opacity="0.12" filter="url(#dw-blur3)"/>
+  <!-- Crescent shadow on small moon -->
+  <circle cx="412" cy="285" r="28" fill="#1a0a2e" opacity="0.1"/>
+
+  <!-- Dreamcatcher outer ring -->
+  <circle cx="400" cy="310" r="130" stroke="#ba68c8" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <circle cx="400" cy="310" r="128" stroke="#ce93d8" stroke-width="0.3" fill="none" opacity="0.15"/>
+
+  <!-- Dreamcatcher inner ring -->
+  <circle cx="400" cy="310" r="90" stroke="#ab47bc" stroke-width="0.6" fill="none" opacity="0.18"/>
+
+  <!-- Dreamcatcher innermost ring -->
+  <circle cx="400" cy="310" r="50" stroke="#9c27b0" stroke-width="0.5" fill="none" opacity="0.15"/>
+
+  <!-- Dreamcatcher web lines -->
+  <line x1="400" y1="180" x2="400" y2="440" stroke="#ce93d8" stroke-width="0.3" opacity="0.12"/>
+  <line x1="270" y1="310" x2="530" y2="310" stroke="#ce93d8" stroke-width="0.3" opacity="0.12"/>
+  <line x1="308" y1="218" x2="492" y2="402" stroke="#ce93d8" stroke-width="0.3" opacity="0.1"/>
+  <line x1="492" y1="218" x2="308" y2="402" stroke="#ce93d8" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Dreamcatcher web connections on inner ring -->
+  <line x1="400" y1="220" x2="440" y2="260" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="440" y1="260" x2="450" y2="310" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="450" y1="310" x2="440" y2="360" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="440" y1="360" x2="400" y2="400" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="400" y1="400" x2="360" y2="360" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="360" y1="360" x2="350" y2="310" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="350" y1="310" x2="360" y2="260" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+  <line x1="360" y1="260" x2="400" y2="220" stroke="#ba68c8" stroke-width="0.25" opacity="0.1"/>
+
+  <!-- Hanging feather-like lines from dreamcatcher -->
+  <path d="M340 440 Q335 470, 330 510" stroke="#ba68c8" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M400 440 Q400 475, 400 520" stroke="#ce93d8" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M460 440 Q465 470, 470 510" stroke="#ba68c8" stroke-width="0.5" fill="none" opacity="0.15"/>
+
+  <!-- Small beads on hanging threads -->
+  <circle cx="330" cy="510" r="2.5" fill="#e1bee7" opacity="0.3" filter="url(#dw-blur3)"/>
+  <circle cx="400" cy="520" r="3" fill="#f48fb1" opacity="0.3" filter="url(#dw-blur3)"/>
+  <circle cx="470" cy="510" r="2.5" fill="#e1bee7" opacity="0.3" filter="url(#dw-blur3)"/>
+
+  <!-- Floating cloud-like shapes -->
+  <ellipse cx="200" cy="350" rx="70" ry="25" fill="#7b1fa2" opacity="0.06" filter="url(#dw-blur1)"/>
+  <ellipse cx="600" cy="320" rx="80" ry="30" fill="#9c27b0" opacity="0.05" filter="url(#dw-blur1)"/>
+  <ellipse cx="150" cy="280" rx="55" ry="20" fill="#ab47bc" opacity="0.04" filter="url(#dw-blur1)"/>
+  <ellipse cx="650" cy="250" rx="60" ry="22" fill="#7b1fa2" opacity="0.04" filter="url(#dw-blur1)"/>
+
+  <!-- Floating dream particles -->
+  <circle cx="300" cy="250" r="1.5" fill="#f48fb1" opacity="0.4" filter="url(#dw-blur3)"/>
+  <circle cx="500" cy="280" r="1.2" fill="#ce93d8" opacity="0.35" filter="url(#dw-blur3)"/>
+  <circle cx="350" cy="380" r="1.8" fill="#f48fb1" opacity="0.3" filter="url(#dw-blur3)"/>
+  <circle cx="450" cy="400" r="1" fill="#e1bee7" opacity="0.3" filter="url(#dw-blur3)"/>
+  <circle cx="280" cy="420" r="1.3" fill="#ce93d8" opacity="0.25" filter="url(#dw-blur3)"/>
+  <circle cx="520" cy="370" r="1.4" fill="#f48fb1" opacity="0.3" filter="url(#dw-blur3)"/>
+
+  <!-- Title -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#ffffff" letter-spacing="4" opacity="0.9" filter="url(#dw-glow)">DREAM WEAVER</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ce93d8" letter-spacing="6" opacity="0.65">LUCID SLEEP JOURNEY</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#9c27b0" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="668" r="2" fill="#ce93d8" opacity="0.5"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7b1fa2" letter-spacing="4" opacity="0.5">HEMISYNC.ORG</text>
+</svg>

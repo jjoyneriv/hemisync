@@ -1,0 +1,368 @@
+{
+  "name": "HemiSync Soundtrack & Cover Art Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-soundtrack",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.first().json.body;\n\nconst title = input.title || 'Calm Focus';\nconst category = input.category || 'Focus';\nconst mood = input.mood || 'calm, meditative, ambient';\nconst duration_seconds = input.duration_seconds || 120;\n\nconst musicPrompt = `Create a ${mood} audio track for ${category.toLowerCase()}. Style: ambient meditation music with binaural-inspired stereo panning, soft pads, gentle drones, no vocals. Title: ${title}. Duration target: ${Math.round(duration_seconds / 60)} minutes.`;\n\nconst imagePrompt = `Abstract digital artwork for a meditation audio track called \"${title}\". Theme: ${category}. Style: cosmic gradients, deep blues and purples, soft glowing orbs, sound wave visualizations, sacred geometry, aurora lights, dark background, premium minimalist design, no text.`;\n\nreturn [{\n  json: {\n    title,\n    category,\n    mood,\n    duration_seconds,\n    musicPrompt,\n    imagePrompt,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "prepare-prompts",
+      "name": "Prepare Prompts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.suno.ai/v1/songs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ prompt: $json.musicPrompt, duration: $json.duration_seconds, instrumental: true, title: $json.title, tags: $json.category.toLowerCase() + ', meditation, ambient, binaural' }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "suno-generate",
+      "name": "Suno Generate Song",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "suno-api-key",
+          "name": "Suno API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\n\n// Extract song ID from Suno response\nconst songId = response.id || response.song_id || (response.data && response.data[0] && response.data[0].id);\n\nif (!songId) {\n  throw new Error('No song ID returned from Suno API. Response: ' + JSON.stringify(response).substring(0, 500));\n}\n\nreturn [{\n  json: {\n    songId,\n    status: 'processing',\n    pollCount: 0,\n    maxPolls: 60\n  }\n}];"
+      },
+      "id": "extract-song-id",
+      "name": "Extract Song ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 200]
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "wait-for-suno",
+      "name": "Wait 10s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.suno.ai/v1/songs/{{ $json.songId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "suno-poll-status",
+      "name": "Poll Suno Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1320, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "suno-api-key",
+          "name": "Suno API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst prevData = $('Extract Song ID').first().json;\n\nconst status = response.status || (response.data && response.data.status) || 'unknown';\nconst pollCount = (prevData.pollCount || 0) + 1;\n\nconst audioUrl = response.audio_url || response.song_url || (response.data && response.data.audio_url) || null;\nconst streamUrl = response.stream_url || (response.data && response.data.stream_url) || null;\n\nreturn [{\n  json: {\n    songId: prevData.songId,\n    status,\n    audioUrl,\n    streamUrl,\n    pollCount,\n    maxPolls: prevData.maxPolls,\n    isComplete: status === 'complete' || status === 'completed' || !!audioUrl,\n    isFailed: status === 'failed' || status === 'error' || pollCount >= prevData.maxPolls\n  }\n}];"
+      },
+      "id": "check-suno-status",
+      "name": "Check Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-complete",
+              "leftValue": "={{ $json.isComplete }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "is-complete",
+      "name": "Song Ready?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1760, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'dall-e-3', prompt: $('Prepare Prompts').first().json.imagePrompt, n: 1, size: '1024x1024', quality: 'hd', style: 'vivid' }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "generate-cover-art",
+      "name": "Generate Cover Art (DALL-E)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2000, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openai-api-key",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const sunoData = $('Check Status').first().json;\nconst promptData = $('Prepare Prompts').first().json;\nconst imageResponse = $input.first().json;\n\nconst imageUrl = imageResponse.data && imageResponse.data[0] && imageResponse.data[0].url;\nconst revisedPrompt = imageResponse.data && imageResponse.data[0] && imageResponse.data[0].revised_prompt;\n\nreturn [{\n  json: {\n    success: true,\n    track: {\n      title: promptData.title,\n      category: promptData.category,\n      mood: promptData.mood,\n      duration_seconds: promptData.duration_seconds,\n      audioUrl: sunoData.audioUrl,\n      streamUrl: sunoData.streamUrl,\n      songId: sunoData.songId\n    },\n    coverArt: {\n      imageUrl: imageUrl || null,\n      revisedPrompt: revisedPrompt || null\n    },\n    prompts: {\n      music: promptData.musicPrompt,\n      image: promptData.imagePrompt\n    },\n    generatedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "combine-results",
+      "name": "Combine Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}"
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2440, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: false, error: 'Song generation failed or timed out', status: $json.status, pollCount: $json.pollCount }) }}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "respond-failure",
+      "name": "Respond Failure",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2000, 400]
+    },
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [220, 520]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Default test payload for manual execution\nreturn [{\n  json: {\n    body: {\n      title: 'Deep Focus Flow',\n      category: 'Focus',\n      mood: 'calm, rhythmic, ambient, concentration',\n      duration_seconds: 120\n    }\n  }\n}];"
+      },
+      "id": "test-payload",
+      "name": "Test Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 520]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Prepare Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Test Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Payload": {
+      "main": [
+        [
+          {
+            "node": "Prepare Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Prompts": {
+      "main": [
+        [
+          {
+            "node": "Suno Generate Song",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Suno Generate Song": {
+      "main": [
+        [
+          {
+            "node": "Extract Song ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Song ID": {
+      "main": [
+        [
+          {
+            "node": "Wait 10s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10s": {
+      "main": [
+        [
+          {
+            "node": "Poll Suno Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Poll Suno Status": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "Song Ready?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Song Ready?": {
+      "main": [
+        [
+          {
+            "node": "Generate Cover Art (DALL-E)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Cover Art (DALL-E)": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Results": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "hemisync"
+    },
+    {
+      "name": "suno"
+    },
+    {
+      "name": "music-generation"
+    }
+  ]
+}

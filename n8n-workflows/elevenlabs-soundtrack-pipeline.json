@@ -1,0 +1,293 @@
+{
+  "name": "HemiSync Soundtrack & Cover Art Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-soundtrack",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [220, 520]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Default test payload for manual execution\nreturn [{\n  json: {\n    body: {\n      title: 'Deep Focus Flow',\n      category: 'Focus',\n      mood: 'calm, rhythmic, ambient, concentration',\n      duration_seconds: 30\n    }\n  }\n}];"
+      },
+      "id": "test-payload",
+      "name": "Test Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 520]
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.first().json.body || $input.first().json;\n\nconst title = input.title || 'Calm Focus';\nconst category = input.category || 'Focus';\nconst mood = input.mood || 'calm, meditative, ambient';\nconst duration_seconds = input.duration_seconds || 120;\n\nconst musicPrompt = `${mood} instrumental track for ${category.toLowerCase()}. Ambient meditation music with soft pads, gentle drones, binaural-inspired stereo panning. No vocals. Title: ${title}.`;\n\nconst imagePrompt = `Abstract digital artwork for a meditation audio track called \"${title}\". Theme: ${category}. Style: cosmic gradients, deep blues and purples, soft glowing orbs, sound wave visualizations, sacred geometry, aurora lights, dark background, premium minimalist design, no text.`;\n\nreturn [{\n  json: {\n    title,\n    category,\n    mood,\n    duration_seconds,\n    musicPrompt,\n    imagePrompt,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "prepare-prompts",
+      "name": "Prepare Prompts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/sound-generation",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $json.musicPrompt, duration_seconds: Math.min($json.duration_seconds, 30) }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "audioData"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "id": "elevenlabs-generate",
+      "name": "ElevenLabs Generate Audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [900, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ENHvDek09x3N5WPX",
+          "name": "ElevenLabs API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const audioItem = $input.first();\nconst promptData = $('Prepare Prompts').first().json;\n\nconst hasBinary = audioItem.binary && audioItem.binary.audioData;\n\nreturn [{\n  json: {\n    audioGenerated: !!hasBinary,\n    title: promptData.title,\n    category: promptData.category,\n    mood: promptData.mood,\n    duration_seconds: promptData.duration_seconds,\n    imagePrompt: promptData.imagePrompt,\n    musicPrompt: promptData.musicPrompt,\n    mimeType: hasBinary ? audioItem.binary.audioData.mimeType : null,\n    fileSize: hasBinary ? audioItem.binary.audioData.fileSize : null,\n    fileName: hasBinary ? audioItem.binary.audioData.fileName : null\n  },\n  binary: audioItem.binary || {}\n}];"
+      },
+      "id": "process-audio",
+      "name": "Process Audio Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-audio-ok",
+              "leftValue": "={{ $json.audioGenerated }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "audio-ok",
+      "name": "Audio OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-image",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ prompt: $json.imagePrompt, n: 1, size: '1024x1024' }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "imageData"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "generate-cover-art",
+      "name": "Generate Cover Art",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1560, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ENHvDek09x3N5WPX",
+          "name": "ElevenLabs API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.first();\nconst audioNode = $('Process Audio Result').first();\n\nconst hasImage = input.binary && input.binary.imageData;\n\nconst result = {\n  success: true,\n  track: {\n    title: audioNode.json.title,\n    category: audioNode.json.category,\n    mood: audioNode.json.mood,\n    duration_seconds: audioNode.json.duration_seconds,\n    audioMimeType: audioNode.json.mimeType,\n    audioFileSize: audioNode.json.fileSize\n  },\n  coverArt: {\n    generated: !!hasImage,\n    mimeType: hasImage ? input.binary.imageData.mimeType : null\n  },\n  prompts: {\n    music: audioNode.json.musicPrompt,\n    image: audioNode.json.imagePrompt\n  },\n  generatedAt: new Date().toISOString()\n};\n\n// Merge binary data from both nodes\nconst binary = {};\nif (audioNode.binary && audioNode.binary.audioData) {\n  binary.audioData = audioNode.binary.audioData;\n}\nif (hasImage) {\n  binary.imageData = input.binary.imageData;\n}\n\nreturn [{ json: result, binary }];"
+      },
+      "id": "combine-results",
+      "name": "Combine Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}"
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2000, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: false, error: 'Audio generation failed', details: $json }) }}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "respond-failure",
+      "name": "Respond Failure",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1560, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Prepare Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Test Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Payload": {
+      "main": [
+        [
+          {
+            "node": "Prepare Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Prompts": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabs Generate Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabs Generate Audio": {
+      "main": [
+        [
+          {
+            "node": "Process Audio Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Audio Result": {
+      "main": [
+        [
+          {
+            "node": "Audio OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio OK?": {
+      "main": [
+        [
+          {
+            "node": "Generate Cover Art",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Cover Art": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Results": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}
