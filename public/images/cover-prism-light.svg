@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="40%" stop-color="#0d0520"/>
+      <stop offset="100%" stop-color="#050210"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="35%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#a020a0" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#6b1580" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="65%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="#d4a017" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#a07810" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#e040e0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="prismGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#e0c0ff" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#a020a0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rainbow1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff0040"/>
+      <stop offset="17%" stop-color="#ff6600"/>
+      <stop offset="33%" stop-color="#ffdd00"/>
+      <stop offset="50%" stop-color="#00cc44"/>
+      <stop offset="67%" stop-color="#0088ff"/>
+      <stop offset="83%" stop-color="#6633ff"/>
+      <stop offset="100%" stop-color="#cc00cc"/>
+    </linearGradient>
+    <linearGradient id="prismFace1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#d0a0ff" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="prismFace2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#a060d0" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="inBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="rainbowGlow">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds -->
+  <ellipse cx="280" cy="300" rx="280" ry="200" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="550" cy="380" rx="250" ry="180" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="320" rx="180" ry="140" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Stars -->
+  <circle cx="90" cy="55" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="710" cy="75" r="0.8" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="140" r="1.5" fill="#e0b0ff" opacity="0.4"/>
+  <circle cx="640" cy="120" r="0.6" fill="white" opacity="0.7"/>
+  <circle cx="370" cy="45" r="1" fill="white" opacity="0.45"/>
+  <circle cx="540" cy="65" r="0.7" fill="#ffe080" opacity="0.5"/>
+  <circle cx="55" cy="340" r="0.9" fill="white" opacity="0.4"/>
+  <circle cx="745" cy="290" r="1.1" fill="white" opacity="0.35"/>
+  <circle cx="35" cy="540" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="760" cy="490" r="1.3" fill="#e0b0ff" opacity="0.3"/>
+  <circle cx="240" cy="740" r="0.7" fill="white" opacity="0.45"/>
+  <circle cx="610" cy="750" r="1" fill="white" opacity="0.4"/>
+  <circle cx="460" cy="770" r="0.6" fill="white" opacity="0.55"/>
+  <circle cx="120" cy="440" r="0.8" fill="#ffe0f0" opacity="0.3"/>
+  <circle cx="690" cy="590" r="0.9" fill="white" opacity="0.4"/>
+  <circle cx="310" cy="170" r="0.5" fill="white" opacity="0.6"/>
+  <circle cx="510" cy="190" r="1.1" fill="white" opacity="0.3"/>
+  <circle cx="190" cy="610" r="0.7" fill="white" opacity="0.5"/>
+  <circle cx="570" cy="670" r="0.6" fill="white" opacity="0.45"/>
+  <circle cx="430" cy="130" r="0.8" fill="#ffe080" opacity="0.35"/>
+
+  <!-- Incoming white light beam -->
+  <polygon points="80,180 340,310 340,340" fill="url(#inBeam)" opacity="0.5"/>
+  <line x1="80" y1="180" x2="340" y2="325" stroke="white" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Prism triangle -->
+  <polygon points="400,220 320,400 480,400" fill="url(#prismFace1)" stroke="#ffffff" stroke-width="1" stroke-opacity="0.3"/>
+  <polygon points="400,220 320,400 400,380" fill="url(#prismFace2)" opacity="0.5"/>
+  <!-- Prism edge highlights -->
+  <line x1="400" y1="220" x2="320" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="400" y1="220" x2="480" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="320" y1="400" x2="480" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+  <!-- Internal refraction lines -->
+  <line x1="360" y1="280" x2="380" y2="380" stroke="#ffffff" stroke-width="0.3" opacity="0.15"/>
+  <line x1="420" y1="290" x2="440" y2="370" stroke="#ffffff" stroke-width="0.3" opacity="0.12"/>
+
+  <!-- Prism glow -->
+  <circle cx="400" cy="330" r="60" fill="url(#prismGlow)" filter="url(#softGlow)" opacity="0.4"/>
+
+  <!-- Rainbow spectrum bands emanating from prism -->
+  <!-- Red band -->
+  <polygon points="480,360 720,200 720,220" fill="#ff0040" opacity="0.35" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="360" x2="730" y2="210" stroke="#ff0040" stroke-width="3" opacity="0.5"/>
+  <!-- Orange band -->
+  <polygon points="480,368 720,230 720,250" fill="#ff6600" opacity="0.35" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="368" x2="730" y2="240" stroke="#ff6600" stroke-width="3" opacity="0.5"/>
+  <!-- Yellow band -->
+  <polygon points="480,376 720,260 720,280" fill="#ffdd00" opacity="0.35" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="376" x2="730" y2="270" stroke="#ffdd00" stroke-width="3" opacity="0.5"/>
+  <!-- Green band -->
+  <polygon points="480,384 720,290 720,310" fill="#00cc44" opacity="0.35" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="384" x2="730" y2="300" stroke="#00cc44" stroke-width="3" opacity="0.5"/>
+  <!-- Blue band -->
+  <polygon points="480,392 720,320 720,340" fill="#0088ff" opacity="0.35" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="392" x2="730" y2="330" stroke="#0088ff" stroke-width="3" opacity="0.5"/>
+  <!-- Indigo band -->
+  <polygon points="480,398 720,350 720,370" fill="#6633ff" opacity="0.3" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="398" x2="730" y2="360" stroke="#6633ff" stroke-width="3" opacity="0.45"/>
+  <!-- Violet band -->
+  <polygon points="480,404 720,380 720,400" fill="#cc00cc" opacity="0.3" filter="url(#rainbowGlow)"/>
+  <line x1="480" y1="404" x2="730" y2="390" stroke="#cc00cc" stroke-width="3" opacity="0.45"/>
+
+  <!-- Light refraction sparkle points -->
+  <circle cx="480" cy="380" r="4" fill="white" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="340" cy="325" r="3" fill="white" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="600" cy="290" r="2" fill="#ffdd00" opacity="0.4" filter="url(#glow)"/>
+  <circle cx="650" cy="250" r="1.5" fill="#ff6600" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="670" cy="360" r="1.5" fill="#6633ff" opacity="0.3" filter="url(#glow)"/>
+
+  <!-- Scattered light particles -->
+  <circle cx="550" cy="320" r="1" fill="#00cc44" opacity="0.3"/>
+  <circle cx="580" cy="350" r="0.8" fill="#0088ff" opacity="0.25"/>
+  <circle cx="620" cy="270" r="1.2" fill="#ff0040" opacity="0.2"/>
+  <circle cx="560" cy="380" r="0.7" fill="#cc00cc" opacity="0.25"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">PRISM LIGHT</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#e0a0ff" letter-spacing="7" opacity="0.65">COLOR MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#a040c0" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#d080ff" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#a040c0" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

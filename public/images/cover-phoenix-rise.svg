@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="55%" r="75%">
+      <stop offset="0%" stop-color="#2a0a00"/>
+      <stop offset="40%" stop-color="#180500"/>
+      <stop offset="100%" stop-color="#0a0200"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="45%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#cc3300" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#882200" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="55%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#ff8800" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#cc5500" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#ffcc00" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fireCore" cx="50%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#ffee00" stop-opacity="0.8"/>
+      <stop offset="25%" stop-color="#ff8800" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#cc3300" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wingLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4400" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff6600" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ff8800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="wingRight" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff4400" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff6600" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ff8800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff2200" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#ff6600" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#ffaa00" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffee00" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="fireGlow">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds (fire atmosphere) -->
+  <ellipse cx="350" cy="350" rx="300" ry="220" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="450" cy="300" rx="260" ry="200" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="380" rx="200" ry="160" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Stars (embers/sparks) -->
+  <circle cx="100" cy="70" r="1.2" fill="#ffcc00" opacity="0.5"/>
+  <circle cx="700" cy="90" r="0.8" fill="#ffaa00" opacity="0.6"/>
+  <circle cx="170" cy="160" r="1.5" fill="#ff8800" opacity="0.4"/>
+  <circle cx="630" cy="140" r="0.6" fill="#ffcc00" opacity="0.7"/>
+  <circle cx="360" cy="50" r="1" fill="#ffee00" opacity="0.45"/>
+  <circle cx="530" cy="80" r="0.7" fill="#ff8800" opacity="0.5"/>
+  <circle cx="50" cy="300" r="0.9" fill="#ffaa00" opacity="0.4"/>
+  <circle cx="750" cy="280" r="1.1" fill="#ffcc00" opacity="0.35"/>
+  <circle cx="40" cy="500" r="0.8" fill="#ff6600" opacity="0.3"/>
+  <circle cx="760" cy="460" r="1.3" fill="#ffaa00" opacity="0.25"/>
+  <circle cx="250" cy="740" r="0.7" fill="#ff8800" opacity="0.3"/>
+  <circle cx="600" cy="750" r="1" fill="#ff6600" opacity="0.25"/>
+  <circle cx="465" cy="770" r="0.6" fill="#ffcc00" opacity="0.35"/>
+  <circle cx="120" cy="420" r="0.8" fill="#ff8800" opacity="0.3"/>
+  <circle cx="680" cy="550" r="0.9" fill="#ffaa00" opacity="0.25"/>
+  <circle cx="320" cy="180" r="0.5" fill="#ffee00" opacity="0.5"/>
+  <circle cx="490" cy="200" r="1.1" fill="#ffcc00" opacity="0.35"/>
+  <circle cx="200" cy="580" r="0.7" fill="#ff6600" opacity="0.3"/>
+
+  <!-- Fire/flame base -->
+  <ellipse cx="400" cy="480" r="120" ry="60" fill="url(#fireCore)" filter="url(#fireGlow)" opacity="0.5"/>
+
+  <!-- Flame elements rising -->
+  <path d="M350,480 Q340,420 360,360 Q380,300 370,250" fill="none" stroke="#ff4400" stroke-width="4" opacity="0.3" filter="url(#fireGlow)"/>
+  <path d="M400,480 Q390,400 400,320 Q410,250 400,200" fill="none" stroke="#ff6600" stroke-width="5" opacity="0.35" filter="url(#fireGlow)"/>
+  <path d="M450,480 Q460,420 440,360 Q420,300 430,250" fill="none" stroke="#ff4400" stroke-width="4" opacity="0.3" filter="url(#fireGlow)"/>
+
+  <!-- Phoenix body (central form) -->
+  <path d="M400,200 Q390,260 385,320 Q380,380 390,440 L400,460 L410,440 Q420,380 415,320 Q410,260 400,200" fill="#ffaa00" fill-opacity="0.15" stroke="#ffcc00" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Left wing -->
+  <path d="M385,320 Q330,290 260,250 Q200,220 120,200 Q180,240 220,270 Q280,310 340,340" fill="url(#wingLeft)" stroke="#ff8800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Left wing feather details -->
+  <path d="M350,310 Q300,280 240,260" fill="none" stroke="#ffaa00" stroke-width="0.5" opacity="0.2"/>
+  <path d="M360,325 Q310,300 260,280" fill="none" stroke="#ffaa00" stroke-width="0.4" opacity="0.18"/>
+  <path d="M340,300 Q280,270 210,245" fill="none" stroke="#ff8800" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Right wing -->
+  <path d="M415,320 Q470,290 540,250 Q600,220 680,200 Q620,240 580,270 Q520,310 460,340" fill="url(#wingRight)" stroke="#ff8800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Right wing feather details -->
+  <path d="M450,310 Q500,280 560,260" fill="none" stroke="#ffaa00" stroke-width="0.5" opacity="0.2"/>
+  <path d="M440,325 Q490,300 540,280" fill="none" stroke="#ffaa00" stroke-width="0.4" opacity="0.18"/>
+  <path d="M460,300 Q520,270 590,245" fill="none" stroke="#ff8800" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Phoenix head glow -->
+  <circle cx="400" cy="200" r="12" fill="#ffee00" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="400" cy="200" r="5" fill="#ffffff" opacity="0.4" filter="url(#glow)"/>
+
+  <!-- Ascending sparks -->
+  <circle cx="380" cy="150" r="2" fill="#ffcc00" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="420" cy="130" r="1.8" fill="#ffaa00" opacity="0.45" filter="url(#glow)"/>
+  <circle cx="370" cy="110" r="1.5" fill="#ff8800" opacity="0.4" filter="url(#glow)"/>
+  <circle cx="430" cy="100" r="1.2" fill="#ffcc00" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="395" cy="80" r="1" fill="#ffee00" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="410" cy="60" r="0.8" fill="#ff8800" opacity="0.25"/>
+  <circle cx="385" cy="45" r="0.7" fill="#ffaa00" opacity="0.2"/>
+  <circle cx="350" cy="170" r="1.5" fill="#ff6600" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="450" cy="160" r="1.3" fill="#ff6600" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="340" cy="130" r="1" fill="#ffaa00" opacity="0.25"/>
+  <circle cx="460" cy="120" r="1.1" fill="#ffaa00" opacity="0.28"/>
+
+  <!-- Rebirth circle symbol -->
+  <circle cx="400" cy="310" r="30" fill="none" stroke="#ffcc00" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="400" cy="310" r="50" fill="none" stroke="#ff8800" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">PHOENIX RISE</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ffaa44" letter-spacing="7" opacity="0.65">RENEWAL MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#cc4400" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#ff8800" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cc4400" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

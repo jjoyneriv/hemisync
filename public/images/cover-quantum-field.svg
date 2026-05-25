@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#120830"/>
+      <stop offset="40%" stop-color="#0a0520"/>
+      <stop offset="100%" stop-color="#040210"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="35%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#6633cc" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#442288" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="65%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#3355cc" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#223388" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="38%" r="30%">
+      <stop offset="0%" stop-color="#8844dd" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="probCloud1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9966ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#6633cc" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="probCloud2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4488ff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#2255aa" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bb88ff" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#8855dd" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="nodeFilter">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds -->
+  <ellipse cx="300" cy="310" rx="280" ry="200" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="520" cy="380" rx="250" ry="180" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="300" rx="180" ry="140" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Stars -->
+  <circle cx="90" cy="55" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="710" cy="80" r="0.8" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="150" r="1.5" fill="#bb99ff" opacity="0.4"/>
+  <circle cx="640" cy="130" r="0.6" fill="white" opacity="0.7"/>
+  <circle cx="375" cy="42" r="1" fill="white" opacity="0.45"/>
+  <circle cx="545" cy="68" r="0.7" fill="#99aaff" opacity="0.5"/>
+  <circle cx="58" cy="345" r="0.9" fill="white" opacity="0.4"/>
+  <circle cx="742" cy="300" r="1.1" fill="white" opacity="0.35"/>
+  <circle cx="32" cy="545" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="768" cy="500" r="1.3" fill="#bb99ff" opacity="0.3"/>
+  <circle cx="248" cy="745" r="0.7" fill="white" opacity="0.45"/>
+  <circle cx="608" cy="755" r="1" fill="white" opacity="0.4"/>
+  <circle cx="465" cy="778" r="0.6" fill="white" opacity="0.55"/>
+  <circle cx="128" cy="445" r="0.8" fill="#99aaff" opacity="0.3"/>
+  <circle cx="688" cy="598" r="0.9" fill="white" opacity="0.4"/>
+  <circle cx="315" cy="178" r="0.5" fill="white" opacity="0.6"/>
+  <circle cx="505" cy="198" r="1.1" fill="white" opacity="0.3"/>
+  <circle cx="198" cy="618" r="0.7" fill="white" opacity="0.5"/>
+
+  <!-- Field grid (perspective) -->
+  <!-- Horizontal grid lines -->
+  <line x1="100" y1="250" x2="700" y2="250" stroke="#6633cc" stroke-width="0.3" opacity="0.08"/>
+  <line x1="80" y1="300" x2="720" y2="300" stroke="#6633cc" stroke-width="0.3" opacity="0.1"/>
+  <line x1="60" y1="350" x2="740" y2="350" stroke="#6633cc" stroke-width="0.4" opacity="0.12"/>
+  <line x1="50" y1="400" x2="750" y2="400" stroke="#6633cc" stroke-width="0.4" opacity="0.14"/>
+  <line x1="60" y1="450" x2="740" y2="450" stroke="#6633cc" stroke-width="0.3" opacity="0.1"/>
+  <line x1="80" y1="500" x2="720" y2="500" stroke="#6633cc" stroke-width="0.3" opacity="0.08"/>
+  <!-- Vertical grid lines -->
+  <line x1="200" y1="220" x2="200" y2="530" stroke="#4422aa" stroke-width="0.3" opacity="0.08"/>
+  <line x1="300" y1="210" x2="300" y2="540" stroke="#4422aa" stroke-width="0.3" opacity="0.1"/>
+  <line x1="400" y1="200" x2="400" y2="550" stroke="#4422aa" stroke-width="0.4" opacity="0.12"/>
+  <line x1="500" y1="210" x2="500" y2="540" stroke="#4422aa" stroke-width="0.3" opacity="0.1"/>
+  <line x1="600" y1="220" x2="600" y2="530" stroke="#4422aa" stroke-width="0.3" opacity="0.08"/>
+
+  <!-- Wave-particle duality patterns (sinusoidal wave) -->
+  <path d="M100,350 Q150,310 200,350 Q250,390 300,350 Q350,310 400,350 Q450,390 500,350 Q550,310 600,350 Q650,390 700,350" fill="none" stroke="#8855dd" stroke-width="1.5" opacity="0.25"/>
+  <path d="M100,350 Q150,320 200,350 Q250,380 300,350 Q350,320 400,350 Q450,380 500,350 Q550,320 600,350 Q650,380 700,350" fill="none" stroke="#6644bb" stroke-width="0.8" opacity="0.15"/>
+  <!-- Particle positions on wave -->
+  <circle cx="200" cy="350" r="4" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.6"/>
+  <circle cx="300" cy="350" r="4" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.6"/>
+  <circle cx="400" cy="350" r="5" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.7"/>
+  <circle cx="500" cy="350" r="4" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.6"/>
+  <circle cx="600" cy="350" r="4" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.6"/>
+
+  <!-- Probability cloud dots -->
+  <circle cx="200" cy="320" r="1.5" fill="#9966ff" opacity="0.25"/>
+  <circle cx="210" cy="340" r="1" fill="#8855dd" opacity="0.2"/>
+  <circle cx="190" cy="360" r="1.2" fill="#9966ff" opacity="0.22"/>
+  <circle cx="220" cy="355" r="0.8" fill="#7744cc" opacity="0.18"/>
+  <circle cx="300" cy="330" r="1.3" fill="#9966ff" opacity="0.2"/>
+  <circle cx="310" cy="370" r="1" fill="#8855dd" opacity="0.18"/>
+  <circle cx="290" cy="345" r="0.9" fill="#7744cc" opacity="0.22"/>
+  <circle cx="400" cy="315" r="1.8" fill="#9966ff" opacity="0.25"/>
+  <circle cx="410" cy="380" r="1.5" fill="#8855dd" opacity="0.22"/>
+  <circle cx="390" cy="370" r="1.2" fill="#7744cc" opacity="0.2"/>
+  <circle cx="395" cy="330" r="1" fill="#bb88ff" opacity="0.18"/>
+  <circle cx="500" cy="340" r="1.3" fill="#9966ff" opacity="0.2"/>
+  <circle cx="510" cy="365" r="1" fill="#8855dd" opacity="0.18"/>
+  <circle cx="600" cy="335" r="1.2" fill="#9966ff" opacity="0.2"/>
+  <circle cx="590" cy="370" r="0.9" fill="#7744cc" opacity="0.18"/>
+
+  <!-- Probability cloud halos -->
+  <ellipse cx="400" cy="350" rx="40" ry="30" fill="url(#probCloud1)" filter="url(#softGlow)" opacity="0.3"/>
+  <ellipse cx="300" cy="350" rx="30" ry="22" fill="url(#probCloud2)" filter="url(#softGlow)" opacity="0.25"/>
+  <ellipse cx="500" cy="350" rx="30" ry="22" fill="url(#probCloud2)" filter="url(#softGlow)" opacity="0.25"/>
+
+  <!-- Entanglement lines connecting nodes -->
+  <line x1="200" y1="350" x2="600" y2="350" stroke="#8855dd" stroke-width="0.5" opacity="0.1" stroke-dasharray="3,5"/>
+  <path d="M200,350 Q300,280 400,350 Q500,420 600,350" fill="none" stroke="#6644bb" stroke-width="0.6" opacity="0.12" stroke-dasharray="2,4"/>
+  <path d="M200,350 Q300,420 400,350 Q500,280 600,350" fill="none" stroke="#9966ff" stroke-width="0.6" opacity="0.12" stroke-dasharray="2,4"/>
+  <!-- Cross entanglement -->
+  <line x1="200" y1="350" x2="500" y2="350" stroke="#bb88ff" stroke-width="0.3" opacity="0.08"/>
+  <line x1="300" y1="350" x2="600" y2="350" stroke="#bb88ff" stroke-width="0.3" opacity="0.08"/>
+
+  <!-- Additional quantum nodes (outer) -->
+  <circle cx="150" cy="280" r="3" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.3"/>
+  <circle cx="650" cy="420" r="3" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.3"/>
+  <circle cx="250" cy="450" r="2.5" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.25"/>
+  <circle cx="550" cy="260" r="2.5" fill="url(#nodeGlow)" filter="url(#nodeFilter)" opacity="0.25"/>
+  <!-- Entanglement to outer nodes -->
+  <line x1="200" y1="350" x2="150" y2="280" stroke="#8855dd" stroke-width="0.4" opacity="0.1" stroke-dasharray="2,3"/>
+  <line x1="600" y1="350" x2="650" y2="420" stroke="#8855dd" stroke-width="0.4" opacity="0.1" stroke-dasharray="2,3"/>
+  <line x1="300" y1="350" x2="250" y2="450" stroke="#6644bb" stroke-width="0.3" opacity="0.08" stroke-dasharray="2,3"/>
+  <line x1="500" y1="350" x2="550" y2="260" stroke="#6644bb" stroke-width="0.3" opacity="0.08" stroke-dasharray="2,3"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">QUANTUM FIELD</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#bb88ff" letter-spacing="7" opacity="0.65">UNIFIED AWARENESS</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#6633cc" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#8855dd" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6633cc" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

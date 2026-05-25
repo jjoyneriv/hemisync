@@ -104,6 +104,16 @@ PROMPTS[northern-lights]="Northern lights wonder ambient. Shimmering curtains of
 PROMPTS[temple-bells]="Temple bells mindfulness meditation. Resonant bell strikes at intervals, long reverberant decay, meditative silence between strikes, warm temple atmosphere, contemplative spacing. Mindful, present, sacred. No drums, no vocals. 40 BPM."
 PROMPTS[floating-islands]="Floating islands imagination ambient. Weightless ascending textures, cloud-soft pad layers, whimsical gentle melodies, open sky spaciousness, dream archipelago atmosphere. Weightless, whimsical, free. No drums, no vocals. 62 BPM."
 PROMPTS[iron-resolve]="Iron resolve determination ambient. Steady unwavering drone, metallic harmonic strength, industrial precision undertones, focused laser clarity, unbreakable rhythm. Strong, determined, unshakeable. No drums, no vocals. 74 BPM."
+PROMPTS[prism-light]="Color spectrum meditation ambient. Prismatic rainbow harmonics shifting through frequency bands, warm light-like tones, spectral shimmer, gentle chromatic movement. Colorful, radiant, joyful. No drums, no vocals. 56 BPM."
+PROMPTS[ancient-forest]="Ancient forest nature immersion. Deep woodland atmosphere, distant birdsong-like tones, rustling canopy textures, moss-covered resonance, ancient tree depth. Primordial, peaceful, alive. No drums, no vocals. 50 BPM."
+PROMPTS[diamond-mind]="Diamond clarity focus ambient. Ultra-clear crystalline tones, precise sharp harmonics, transparent sonic space, laser-focused frequencies, brilliant high-end shimmer. Crystal clear, sharp, brilliant. No drums, no vocals. 76 BPM."
+PROMPTS[tidal-dream]="Deep ocean tidal sleep ambient. Slow massive wave swells, underwater resonance, deep pressure drones, bioluminescent shimmer tones, abyssal calm. Oceanic, vast, enveloping. No drums, no vocals. 44 BPM."
+PROMPTS[phoenix-rise]="Phoenix renewal meditation ambient. Rising transformative tones, warm fire-like frequencies ascending, rebirth crescendo swells, ember glow warmth, triumphant resolution. Rising, powerful, renewed. No drums, no vocals. 64 BPM."
+PROMPTS[silk-road]="Silk road journey meditation. Exotic harmonic intervals, warm spice-market overtones, caravan rhythm undertones, desert wind textures, ancient trade route mystique. Exotic, warm, adventurous. No drums, no vocals. 58 BPM."
+PROMPTS[glacier-peace]="Glacial deep stillness ambient. Vast frozen landscape tones, ice crystal resonance, extreme slow movement, pristine silence, arctic purity. Still, vast, pristine. No drums, no vocals. 40 BPM."
+PROMPTS[quantum-field]="Quantum field unified awareness meditation. Superposition harmonic layers, entangled stereo frequencies, probability wave textures, unified field resonance, observer-state stillness. Infinite, unified, mysterious. No drums, no vocals. 52 BPM."
+PROMPTS[storm-eye]="Storm eye calm focus ambient. Surrounding turbulence textures with perfectly still center, contrast between chaos and calm, unwavering inner peace frequency. Centered, unshakeable, calm. No drums, no vocals. 66 BPM."
+PROMPTS[golden-hour]="Golden hour sunset reflection ambient. Warm amber-gold frequencies, fading daylight tones, nostalgic gentle warmth, peaceful ending energy, gratitude-inducing resonance. Warm, golden, grateful. No drums, no vocals. 54 BPM."
 
 SONG_ID="$1"
 

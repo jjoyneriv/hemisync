@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#2a1510"/>
+      <stop offset="40%" stop-color="#180a08"/>
+      <stop offset="100%" stop-color="#0a0504"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="40%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#cc8830" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#996620" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="60%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#cc6688" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#994466" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#eebb44" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunsetGlow" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#ffcc66" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#cc8844" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="duneGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cc8830" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#664420" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="duneGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eebb44" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#885520" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffcc88" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#cc8844" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#885530" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="archGlow">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds (desert atmosphere) -->
+  <ellipse cx="300" cy="330" rx="300" ry="220" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="520" cy="300" rx="260" ry="190" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="350" rx="220" ry="160" fill="url(#nebula3)" filter="url(#softGlow)"/>
+  <ellipse cx="400" cy="280" rx="280" ry="200" fill="url(#sunsetGlow)" filter="url(#wideGlow)"/>
+
+  <!-- Star navigation points -->
+  <circle cx="400" cy="80" r="3" fill="#ffee88" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="300" cy="60" r="2" fill="#ffcc66" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="520" cy="70" r="2.5" fill="#ffddaa" opacity="0.55" filter="url(#glow)"/>
+  <circle cx="200" cy="100" r="1.8" fill="#eebb66" opacity="0.45" filter="url(#glow)"/>
+  <circle cx="620" cy="90" r="1.5" fill="#ffcc88" opacity="0.4" filter="url(#glow)"/>
+  <!-- Navigation constellation lines -->
+  <line x1="300" y1="60" x2="400" y2="80" stroke="#ffcc66" stroke-width="0.3" opacity="0.2"/>
+  <line x1="400" y1="80" x2="520" y2="70" stroke="#ffcc66" stroke-width="0.3" opacity="0.2"/>
+  <line x1="200" y1="100" x2="300" y2="60" stroke="#eebb66" stroke-width="0.2" opacity="0.15"/>
+  <line x1="520" y1="70" x2="620" y2="90" stroke="#eebb66" stroke-width="0.2" opacity="0.15"/>
+
+  <!-- Regular stars -->
+  <circle cx="85" cy="45" r="1.2" fill="#ffddaa" opacity="0.5"/>
+  <circle cx="715" cy="55" r="0.8" fill="#ffcc88" opacity="0.6"/>
+  <circle cx="155" cy="150" r="1" fill="#eebb66" opacity="0.4"/>
+  <circle cx="645" cy="140" r="0.6" fill="#ffddaa" opacity="0.5"/>
+  <circle cx="50" cy="250" r="0.9" fill="#ffcc88" opacity="0.35"/>
+  <circle cx="750" cy="200" r="1.1" fill="#eebb66" opacity="0.3"/>
+  <circle cx="30" cy="400" r="0.7" fill="#ffddaa" opacity="0.3"/>
+  <circle cx="770" cy="380" r="0.8" fill="#ffcc88" opacity="0.25"/>
+  <circle cx="100" cy="500" r="0.6" fill="#eebb66" opacity="0.25"/>
+  <circle cx="700" cy="500" r="0.9" fill="#ffddaa" opacity="0.2"/>
+  <circle cx="250" cy="740" r="0.7" fill="#ffcc88" opacity="0.25"/>
+  <circle cx="550" cy="750" r="0.8" fill="#eebb66" opacity="0.2"/>
+
+  <!-- Desert dune shapes -->
+  <path d="M0,420 Q100,380 200,400 Q350,430 500,390 Q650,360 800,400 L800,500 Q650,460 500,480 Q350,510 200,490 Q100,475 0,500 Z" fill="url(#duneGrad1)" opacity="0.4"/>
+  <path d="M0,460 Q150,430 300,450 Q450,470 600,440 Q700,420 800,450 L800,520 Q700,490 600,510 Q450,540 300,520 Q150,500 0,530 Z" fill="url(#duneGrad2)" opacity="0.3"/>
+  <!-- Dune ridgelines -->
+  <path d="M0,420 Q100,380 200,400 Q350,430 500,390 Q650,360 800,400" fill="none" stroke="#cc8830" stroke-width="1" opacity="0.2"/>
+  <path d="M0,460 Q150,430 300,450 Q450,470 600,440 Q700,420 800,450" fill="none" stroke="#eebb44" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Winding road/path -->
+  <path d="M400,520 Q380,480 350,440 Q310,390 280,340 Q260,300 270,260 Q280,220 310,190 Q350,160 400,150" fill="none" stroke="url(#roadGrad)" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+  <path d="M400,520 Q380,480 350,440 Q310,390 280,340 Q260,300 270,260 Q280,220 310,190 Q350,160 400,150" fill="none" stroke="#ffcc88" stroke-width="1" opacity="0.3" stroke-dasharray="4,8"/>
+  <!-- Road glow -->
+  <path d="M400,520 Q380,480 350,440 Q310,390 280,340 Q260,300 270,260 Q280,220 310,190 Q350,160 400,150" fill="none" stroke="#ffaa44" stroke-width="20" opacity="0.06" filter="url(#softGlow)"/>
+
+  <!-- Exotic arch shapes -->
+  <!-- Main arch -->
+  <path d="M300,350 Q300,260 350,230 Q400,210 450,230 Q500,260 500,350" fill="none" stroke="#cc8844" stroke-width="2" opacity="0.25"/>
+  <path d="M310,350 Q310,270 355,242 Q400,225 445,242 Q490,270 490,350" fill="none" stroke="#eebb66" stroke-width="1" opacity="0.15"/>
+  <!-- Arch keystone detail -->
+  <circle cx="400" cy="218" r="4" fill="#ffcc66" opacity="0.2" filter="url(#archGlow)"/>
+  <!-- Smaller decorative arches -->
+  <path d="M140,400 Q140,360 170,345 Q200,335 230,345 Q260,360 260,400" fill="none" stroke="#cc8844" stroke-width="1.2" opacity="0.15"/>
+  <path d="M560,380 Q560,340 590,325 Q620,315 650,325 Q680,340 680,380" fill="none" stroke="#cc8844" stroke-width="1.2" opacity="0.15"/>
+
+  <!-- Silk/fabric flowing element -->
+  <path d="M200,300 Q250,280 300,310 Q350,340 400,310 Q450,280 500,300" fill="none" stroke="#cc6688" stroke-width="1.5" opacity="0.15"/>
+  <path d="M210,310 Q260,290 310,320 Q360,350 410,320 Q460,290 510,310" fill="none" stroke="#dd7799" stroke-width="1" opacity="0.1"/>
+
+  <!-- Atmospheric dust particles -->
+  <circle cx="350" cy="300" r="1" fill="#ffcc88" opacity="0.2"/>
+  <circle cx="450" cy="280" r="0.8" fill="#eebb66" opacity="0.18"/>
+  <circle cx="300" cy="350" r="1.2" fill="#ffddaa" opacity="0.15"/>
+  <circle cx="500" cy="330" r="0.7" fill="#cc8844" opacity="0.2"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">SILK ROAD</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#eebb66" letter-spacing="7" opacity="0.65">JOURNEY MEDITATION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#cc8844" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#eebb66" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cc8844" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

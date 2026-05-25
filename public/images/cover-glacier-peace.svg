@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#101828"/>
+      <stop offset="40%" stop-color="#0a1018"/>
+      <stop offset="100%" stop-color="#050810"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#4488aa" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#2a5570" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="60%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#6699aa" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#3a6677" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="35%" r="30%">
+      <stop offset="0%" stop-color="#88bbcc" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="horizonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#88aabb" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#5577888" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2a3a48" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="icebergGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c0dde8" stop-opacity="0.3"/>
+      <stop offset="40%" stop-color="#88aabb" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4a6678" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="icebergUnder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a7088" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1a3040" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c0e0ee" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6090a0" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="iceGlow">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds (arctic atmosphere) -->
+  <ellipse cx="300" cy="300" rx="300" ry="200" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="520" cy="340" rx="260" ry="180" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="280" rx="200" ry="150" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Stars -->
+  <circle cx="80" cy="50" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="720" cy="70" r="0.8" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="140" r="1.5" fill="#c0dde8" opacity="0.4"/>
+  <circle cx="640" cy="120" r="0.6" fill="white" opacity="0.7"/>
+  <circle cx="380" cy="35" r="1" fill="white" opacity="0.45"/>
+  <circle cx="550" cy="60" r="0.7" fill="#b0ccdd" opacity="0.5"/>
+  <circle cx="55" cy="250" r="0.9" fill="white" opacity="0.4"/>
+  <circle cx="745" cy="230" r="1.1" fill="white" opacity="0.35"/>
+  <circle cx="30" cy="400" r="0.8" fill="white" opacity="0.3"/>
+  <circle cx="770" cy="380" r="1.3" fill="#c0dde8" opacity="0.25"/>
+  <circle cx="250" cy="740" r="0.7" fill="white" opacity="0.3"/>
+  <circle cx="600" cy="750" r="1" fill="white" opacity="0.25"/>
+  <circle cx="460" cy="770" r="0.6" fill="white" opacity="0.35"/>
+  <circle cx="120" cy="350" r="0.8" fill="#b0ccdd" opacity="0.3"/>
+  <circle cx="680" cy="450" r="0.9" fill="white" opacity="0.25"/>
+  <circle cx="310" cy="100" r="0.5" fill="white" opacity="0.6"/>
+  <circle cx="500" cy="110" r="1.1" fill="white" opacity="0.3"/>
+  <circle cx="200" cy="200" r="0.7" fill="white" opacity="0.5"/>
+
+  <!-- Vast horizon line -->
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#88aabb" stroke-width="1" opacity="0.2"/>
+  <rect x="0" y="335" width="800" height="10" fill="#6090a0" fill-opacity="0.05" filter="url(#softGlow)"/>
+
+  <!-- Distant horizon atmosphere -->
+  <rect x="0" y="300" width="800" height="80" fill="url(#horizonGrad)" filter="url(#wideGlow)"/>
+
+  <!-- Main glacier/iceberg shape (above water) -->
+  <polygon points="300,340 320,260 360,220 400,200 440,230 470,250 500,340" fill="url(#icebergGrad)" stroke="#c0dde8" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Iceberg facets -->
+  <line x1="360" y1="220" x2="380" y2="340" stroke="#c0dde8" stroke-width="0.3" opacity="0.15"/>
+  <line x1="400" y1="200" x2="400" y2="340" stroke="#c0dde8" stroke-width="0.3" opacity="0.12"/>
+  <line x1="440" y1="230" x2="420" y2="340" stroke="#c0dde8" stroke-width="0.3" opacity="0.15"/>
+  <!-- Ice surface highlights -->
+  <polygon points="360,220 400,200 380,270 350,260" fill="#ffffff" fill-opacity="0.05"/>
+  <polygon points="400,200 440,230 420,280 400,260" fill="#c0e0ee" fill-opacity="0.04"/>
+
+  <!-- Underwater portion of iceberg -->
+  <polygon points="290,340 280,400 310,460 380,500 420,500 480,460 510,400 510,340" fill="url(#icebergUnder)" stroke="#4a7088" stroke-width="0.3" stroke-opacity="0.15"/>
+
+  <!-- Secondary smaller iceberg -->
+  <polygon points="600,340 620,290 650,270 680,290 700,340" fill="url(#icebergGrad)" opacity="0.5" stroke="#c0dde8" stroke-width="0.3" stroke-opacity="0.2"/>
+  <polygon points="590,340 585,370 610,400 660,410 700,380 710,340" fill="url(#icebergUnder)" opacity="0.4"/>
+
+  <!-- Small distant iceberg -->
+  <polygon points="140,340 155,310 170,300 185,315 200,340" fill="url(#icebergGrad)" opacity="0.3"/>
+
+  <!-- Frozen crystal formations -->
+  <!-- Crystal cluster left -->
+  <polygon points="180,340 185,290 195,340" fill="url(#crystalGrad)" stroke="#c0dde8" stroke-width="0.3" stroke-opacity="0.2"/>
+  <polygon points="195,340 200,300 210,340" fill="url(#crystalGrad)" opacity="0.8" stroke="#c0dde8" stroke-width="0.3" stroke-opacity="0.15"/>
+  <polygon points="205,340 208,310 215,340" fill="url(#crystalGrad)" opacity="0.6"/>
+  <!-- Crystal cluster right -->
+  <polygon points="580,340 585,305 595,340" fill="url(#crystalGrad)" opacity="0.5" stroke="#c0dde8" stroke-width="0.3" stroke-opacity="0.15"/>
+  <polygon points="560,340 568,315 575,340" fill="url(#crystalGrad)" opacity="0.4"/>
+
+  <!-- Frozen water surface texture -->
+  <line x1="0" y1="345" x2="280" y2="345" stroke="#6090a0" stroke-width="0.3" opacity="0.1"/>
+  <line x1="520" y1="345" x2="580" y2="345" stroke="#6090a0" stroke-width="0.3" opacity="0.1"/>
+  <line x1="710" y1="345" x2="800" y2="345" stroke="#6090a0" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Minimal pristine ice particles -->
+  <circle cx="350" cy="250" r="1" fill="#c0e0ee" opacity="0.2"/>
+  <circle cx="450" cy="240" r="0.8" fill="#ffffff" opacity="0.15"/>
+  <circle cx="300" cy="300" r="1.2" fill="#b0ccdd" opacity="0.12"/>
+  <circle cx="500" cy="280" r="0.7" fill="#c0e0ee" opacity="0.15"/>
+
+  <!-- Cold atmosphere subtle glow -->
+  <circle cx="400" cy="270" r="100" fill="#88bbcc" opacity="0.03" filter="url(#wideGlow)"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">GLACIER PEACE</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#88bbcc" letter-spacing="7" opacity="0.65">DEEP STILLNESS</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#4a7088" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#88aabb" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4a7088" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

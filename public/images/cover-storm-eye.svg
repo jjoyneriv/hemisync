@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#101818"/>
+      <stop offset="40%" stop-color="#0a1010"/>
+      <stop offset="100%" stop-color="#040808"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#445555" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#2a3838" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="60%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#336644" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#224433" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="45%" r="30%">
+      <stop offset="0%" stop-color="#40aa60" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#40dd70" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#30aa55" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#208840" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eyeCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60ffaa" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#40dd70" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#20aa50" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#556666" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#3a4a4a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2a3838" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="stormBlur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds (storm atmosphere) -->
+  <ellipse cx="300" cy="310" rx="300" ry="220" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="520" cy="360" rx="260" ry="190" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="320" rx="200" ry="150" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Stars -->
+  <circle cx="85" cy="50" r="1.2" fill="white" opacity="0.4"/>
+  <circle cx="720" cy="75" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="150" cy="140" r="1.5" fill="#aabbbb" opacity="0.35"/>
+  <circle cx="650" cy="120" r="0.6" fill="white" opacity="0.55"/>
+  <circle cx="370" cy="40" r="1" fill="white" opacity="0.4"/>
+  <circle cx="540" cy="60" r="0.7" fill="#bbccbb" opacity="0.45"/>
+  <circle cx="55" cy="340" r="0.9" fill="white" opacity="0.3"/>
+  <circle cx="745" cy="300" r="1.1" fill="white" opacity="0.3"/>
+  <circle cx="30" cy="550" r="0.8" fill="white" opacity="0.35"/>
+  <circle cx="770" cy="500" r="1.3" fill="#aabbbb" opacity="0.25"/>
+  <circle cx="245" cy="745" r="0.7" fill="white" opacity="0.35"/>
+  <circle cx="605" cy="750" r="1" fill="white" opacity="0.3"/>
+  <circle cx="462" cy="775" r="0.6" fill="white" opacity="0.4"/>
+  <circle cx="125" cy="445" r="0.8" fill="#bbccbb" opacity="0.25"/>
+  <circle cx="685" cy="590" r="0.9" fill="white" opacity="0.3"/>
+  <circle cx="315" cy="175" r="0.5" fill="white" opacity="0.5"/>
+  <circle cx="505" cy="195" r="1.1" fill="white" opacity="0.25"/>
+  <circle cx="195" cy="615" r="0.7" fill="white" opacity="0.4"/>
+
+  <!-- Swirling storm lines (outer rings) -->
+  <!-- Ring 1 (outermost) -->
+  <ellipse cx="400" cy="320" rx="250" ry="240" fill="none" stroke="#556666" stroke-width="1.5" opacity="0.12" transform="rotate(10 400 320)"/>
+  <path d="M150,320 Q200,200 300,150 Q400,110 500,150 Q600,200 650,320 Q600,440 500,490 Q400,530 300,490 Q200,440 150,320" fill="none" stroke="#4a5a5a" stroke-width="2" opacity="0.1" transform="rotate(15 400 320)"/>
+
+  <!-- Ring 2 -->
+  <ellipse cx="400" cy="320" rx="210" ry="200" fill="none" stroke="#5a6a6a" stroke-width="1.8" opacity="0.14" transform="rotate(-8 400 320)"/>
+  <path d="M190,320 Q230,220 320,175 Q400,145 480,175 Q570,220 610,320 Q570,420 480,465 Q400,495 320,465 Q230,420 190,320" fill="none" stroke="#506060" stroke-width="1.5" opacity="0.12" transform="rotate(-15 400 320)"/>
+
+  <!-- Ring 3 -->
+  <ellipse cx="400" cy="320" rx="170" ry="165" fill="none" stroke="#607070" stroke-width="2" opacity="0.16" transform="rotate(20 400 320)"/>
+
+  <!-- Ring 4 -->
+  <ellipse cx="400" cy="320" rx="140" ry="135" fill="none" stroke="#657575" stroke-width="2.2" opacity="0.14" transform="rotate(-25 400 320)"/>
+
+  <!-- Ring 5 -->
+  <ellipse cx="400" cy="320" rx="110" ry="108" fill="none" stroke="#6a7a7a" stroke-width="1.8" opacity="0.12" transform="rotate(30 400 320)"/>
+
+  <!-- Storm turbulence streaks -->
+  <path d="M160,250 Q220,230 280,260 Q340,290 370,270" fill="none" stroke="#556666" stroke-width="1.2" opacity="0.12"/>
+  <path d="M430,270 Q480,250 540,280 Q600,310 640,280" fill="none" stroke="#556666" stroke-width="1.2" opacity="0.12"/>
+  <path d="M170,400 Q230,420 290,390 Q340,370 370,380" fill="none" stroke="#4a5a5a" stroke-width="1" opacity="0.1"/>
+  <path d="M430,380 Q490,400 550,370 Q600,350 640,370" fill="none" stroke="#4a5a5a" stroke-width="1" opacity="0.1"/>
+  <path d="M200,180 Q280,160 350,200" fill="none" stroke="#506060" stroke-width="0.8" opacity="0.08"/>
+  <path d="M450,200 Q520,160 600,180" fill="none" stroke="#506060" stroke-width="0.8" opacity="0.08"/>
+  <path d="M200,460 Q280,480 350,440" fill="none" stroke="#506060" stroke-width="0.8" opacity="0.08"/>
+  <path d="M450,440 Q520,480 600,460" fill="none" stroke="#506060" stroke-width="0.8" opacity="0.08"/>
+
+  <!-- Storm debris particles -->
+  <circle cx="220" cy="260" r="1" fill="#778888" opacity="0.2"/>
+  <circle cx="580" cy="280" r="0.8" fill="#778888" opacity="0.18"/>
+  <circle cx="250" cy="400" r="1.2" fill="#667777" opacity="0.15"/>
+  <circle cx="550" cy="410" r="0.9" fill="#667777" opacity="0.16"/>
+  <circle cx="300" cy="200" r="0.7" fill="#778888" opacity="0.12"/>
+  <circle cx="500" cy="440" r="1" fill="#667777" opacity="0.14"/>
+
+  <!-- Perfectly still emerald center circle (eye of storm) -->
+  <circle cx="400" cy="320" r="60" fill="url(#eyeGlow)" filter="url(#softGlow)" opacity="0.5"/>
+  <circle cx="400" cy="320" r="35" fill="url(#eyeCenter)" filter="url(#glow)" opacity="0.3"/>
+  <circle cx="400" cy="320" r="18" fill="#40dd70" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="400" cy="320" r="8" fill="#60ffaa" opacity="0.25" filter="url(#glow)"/>
+  <circle cx="400" cy="320" r="3" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Calm center ring boundary -->
+  <circle cx="400" cy="320" r="70" fill="none" stroke="#40dd70" stroke-width="0.8" opacity="0.15"/>
+  <circle cx="400" cy="320" r="75" fill="none" stroke="#30aa55" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Transition zone between calm and chaos -->
+  <circle cx="400" cy="320" r="85" fill="none" stroke="#557766" stroke-width="0.6" opacity="0.12" stroke-dasharray="3,5"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">STORM EYE</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#60dd88" letter-spacing="7" opacity="0.65">CALM IN CHAOS</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#336644" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#40aa60" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#336644" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>

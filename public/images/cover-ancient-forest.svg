@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0a1f0a"/>
+      <stop offset="40%" stop-color="#061206"/>
+      <stop offset="100%" stop-color="#020802"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="40%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#0d5c2e" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#084420" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="60%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#0a7040" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#065030" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#10a050" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="canopyLight" cx="50%" cy="15%" r="40%">
+      <stop offset="0%" stop-color="#40e080" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#20a060" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a20" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#0d2210" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#081408" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="depthFog" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a3020" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#0a2818" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#061810" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="wideGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="leafGlow">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- Nebula clouds (forest mist) -->
+  <ellipse cx="320" cy="280" rx="300" ry="220" fill="url(#nebula1)" filter="url(#wideGlow)"/>
+  <ellipse cx="500" cy="400" rx="260" ry="180" fill="url(#nebula2)" filter="url(#wideGlow)"/>
+  <ellipse cx="400" cy="200" rx="250" ry="160" fill="url(#nebula3)" filter="url(#softGlow)"/>
+
+  <!-- Canopy light from above -->
+  <ellipse cx="400" cy="100" rx="350" ry="200" fill="url(#canopyLight)" filter="url(#wideGlow)"/>
+
+  <!-- Stars (fireflies) -->
+  <circle cx="95" cy="200" r="1.5" fill="#80ffa0" opacity="0.5"/>
+  <circle cx="700" cy="180" r="1.2" fill="#60ff80" opacity="0.4"/>
+  <circle cx="180" cy="320" r="1.8" fill="#a0ffb0" opacity="0.35"/>
+  <circle cx="620" cy="280" r="1" fill="#80ffa0" opacity="0.5"/>
+  <circle cx="350" cy="150" r="0.8" fill="#c0ffc0" opacity="0.4"/>
+  <circle cx="520" cy="170" r="1.2" fill="#60e080" opacity="0.45"/>
+  <circle cx="70" cy="420" r="1" fill="#80ffa0" opacity="0.35"/>
+  <circle cx="740" cy="350" r="1.3" fill="#a0ffb0" opacity="0.3"/>
+  <circle cx="45" cy="520" r="0.9" fill="#80ffa0" opacity="0.45"/>
+  <circle cx="755" cy="470" r="1.1" fill="#60ff80" opacity="0.3"/>
+  <circle cx="260" cy="240" r="0.7" fill="#c0ffc0" opacity="0.5"/>
+  <circle cx="590" cy="230" r="1" fill="#80ffa0" opacity="0.4"/>
+  <circle cx="450" cy="120" r="0.8" fill="#a0ffb0" opacity="0.45"/>
+  <circle cx="140" cy="500" r="1.2" fill="#60e080" opacity="0.3"/>
+  <circle cx="670" cy="440" r="0.9" fill="#80ffa0" opacity="0.35"/>
+  <circle cx="330" cy="400" r="0.6" fill="#c0ffc0" opacity="0.4"/>
+  <circle cx="480" cy="350" r="1.1" fill="#60ff80" opacity="0.3"/>
+  <circle cx="210" cy="450" r="0.8" fill="#a0ffb0" opacity="0.45"/>
+
+  <!-- Background depth forest layer (far trees, faint) -->
+  <rect x="100" y="80" width="12" height="420" rx="4" fill="#0a2010" opacity="0.25"/>
+  <rect x="200" y="60" width="10" height="440" rx="3" fill="#0a2010" opacity="0.2"/>
+  <rect x="580" y="70" width="11" height="430" rx="4" fill="#0a2010" opacity="0.22"/>
+  <rect x="700" y="90" width="10" height="410" rx="3" fill="#0a2010" opacity="0.2"/>
+
+  <!-- Mid-ground trees -->
+  <rect x="150" y="50" width="18" height="480" rx="6" fill="#0d2a14" opacity="0.5"/>
+  <rect x="310" y="30" width="20" height="500" rx="7" fill="#0d2a14" opacity="0.45"/>
+  <rect x="500" y="45" width="18" height="485" rx="6" fill="#0d2a14" opacity="0.48"/>
+  <rect x="650" y="55" width="16" height="475" rx="5" fill="#0d2a14" opacity="0.42"/>
+
+  <!-- Foreground tall tree trunks -->
+  <rect x="60" y="0" width="28" height="540" rx="8" fill="url(#trunkGrad)" opacity="0.7"/>
+  <rect x="240" y="0" width="32" height="550" rx="10" fill="url(#trunkGrad)" opacity="0.75"/>
+  <rect x="430" y="0" width="30" height="545" rx="9" fill="url(#trunkGrad)" opacity="0.72"/>
+  <rect x="620" y="0" width="26" height="535" rx="8" fill="url(#trunkGrad)" opacity="0.68"/>
+  <rect x="740" y="0" width="24" height="530" rx="7" fill="url(#trunkGrad)" opacity="0.65"/>
+
+  <!-- Canopy leaf shapes (top of scene) -->
+  <ellipse cx="74" cy="40" rx="50" ry="35" fill="#0a3018" opacity="0.6"/>
+  <ellipse cx="256" cy="25" rx="60" ry="40" fill="#0c3820" opacity="0.65"/>
+  <ellipse cx="445" cy="30" rx="55" ry="38" fill="#0a3018" opacity="0.6"/>
+  <ellipse cx="633" cy="35" rx="48" ry="34" fill="#0c3820" opacity="0.58"/>
+  <ellipse cx="160" cy="55" rx="45" ry="30" fill="#0b3520" opacity="0.5"/>
+  <ellipse cx="370" cy="50" rx="50" ry="32" fill="#0b3520" opacity="0.48"/>
+  <ellipse cx="550" cy="45" rx="52" ry="35" fill="#0a3018" opacity="0.52"/>
+  <ellipse cx="720" cy="50" rx="42" ry="28" fill="#0b3520" opacity="0.45"/>
+
+  <!-- Light rays filtering through canopy -->
+  <polygon points="380,0 390,300 400,300" fill="#40e080" opacity="0.04"/>
+  <polygon points="420,0 430,280 440,280" fill="#30c060" opacity="0.03"/>
+  <polygon points="280,0 290,260 300,260" fill="#40e080" opacity="0.035"/>
+
+  <!-- Root patterns at bottom -->
+  <path d="M60,530 Q80,550 120,540 Q160,530 200,545 Q230,555 240,550" fill="none" stroke="#1a3a20" stroke-width="4" opacity="0.5"/>
+  <path d="M240,550 Q280,560 320,545 Q360,535 400,548" fill="none" stroke="#1a3a20" stroke-width="3.5" opacity="0.45"/>
+  <path d="M430,545 Q470,555 520,540 Q560,530 600,548 Q630,555 620,535" fill="none" stroke="#1a3a20" stroke-width="4" opacity="0.48"/>
+  <path d="M620,535 Q660,548 700,540 Q730,535 740,530" fill="none" stroke="#1a3a20" stroke-width="3" opacity="0.42"/>
+  <!-- Smaller root tendrils -->
+  <path d="M100,545 Q110,560 130,555" fill="none" stroke="#153018" stroke-width="2" opacity="0.3"/>
+  <path d="M280,550 Q300,565 310,558" fill="none" stroke="#153018" stroke-width="2" opacity="0.28"/>
+  <path d="M480,548 Q500,562 510,555" fill="none" stroke="#153018" stroke-width="2" opacity="0.3"/>
+  <path d="M680,542 Q695,558 710,552" fill="none" stroke="#153018" stroke-width="2" opacity="0.25"/>
+
+  <!-- Depth fog layer -->
+  <rect x="0" y="400" width="800" height="200" fill="url(#depthFog)"/>
+
+  <!-- Floating leaf particles -->
+  <ellipse cx="300" cy="300" rx="4" ry="2" fill="#20a050" opacity="0.2" transform="rotate(30 300 300)"/>
+  <ellipse cx="520" cy="260" rx="3" ry="1.5" fill="#30b060" opacity="0.18" transform="rotate(-20 520 260)"/>
+  <ellipse cx="180" cy="380" rx="3.5" ry="1.8" fill="#20a050" opacity="0.15" transform="rotate(45 180 380)"/>
+  <ellipse cx="600" cy="350" rx="3" ry="1.5" fill="#30b060" opacity="0.16" transform="rotate(-35 600 350)"/>
+
+  <!-- Title text -->
+  <text x="400" y="595" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="400" fill="white" letter-spacing="4" opacity="0.9">ANCIENT FOREST</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#60e090" letter-spacing="7" opacity="0.65">NATURE IMMERSION</text>
+
+  <!-- Decorative line -->
+  <line x1="300" y1="668" x2="500" y2="668" stroke="#208040" stroke-width="0.6" opacity="0.3"/>
+  <circle cx="400" cy="668" r="2" fill="#40c070" opacity="0.4"/>
+
+  <!-- Branding -->
+  <text x="400" y="708" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#208040" letter-spacing="4" opacity="0.45">HEMISYNC.ORG</text>
+</svg>
